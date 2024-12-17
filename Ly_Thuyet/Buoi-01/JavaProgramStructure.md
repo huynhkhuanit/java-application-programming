@@ -60,12 +60,15 @@ public class MyClass {
 - Phương thức không phải static:
     - Phải được gọi thông qua một đối tượng của lớp.
     - Có thể truy cập và thay đổi các thành viên cả static và không static của lớp.
+
 ```java
 MyClass obj = new MyClass();
 obj.printX();
 ```
+
 **3. Ví dụ thực tế:**
 - Giả sử bạn muốn tạo một lớp Student với các thông tin như tên và điểm của sinh viên, và có một phương thức không phải static để in ra thông tin của sinh viên.
+
 ```java
 public class Student {
     // Các biến thể hiện (instance variables)
@@ -91,12 +94,15 @@ public class Student {
     }
 }
 ```
+
 - Giải thích ví dụ trên:
     - Lớp Student có hai thuộc tính name và score, đây là các biến thể hiện (instance variables).
     - Phương thức printInfo là phương thức không phải static. Nó sẽ in ra tên và điểm của đối tượng Student mà phương thức này được gọi.
     - Trong phương thức main, bạn tạo đối tượng student1 của lớp Student và gán giá trị cho các thuộc tính name và score. Sau đó, bạn gọi phương thức printInfo thông qua đối tượng student1.
 ---
+
 > Lưu ý: Bạn không thể truy cập trực tiếp vào các biến thể hiện mà không có phương thức cụ thể.
+
 - Đối với các biến thể hiện nằm trong một lớp thì theo định nghĩa lập trình hướng đối tượng thì các biến ấy được gọi là các thuộc tính của một lớp, và một lớp được cấu thành bởi **thuộc tính (property)** và **phương thức (method)**
 - Ví dụ thực tế:
 ```java

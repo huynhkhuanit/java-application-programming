@@ -37,8 +37,10 @@ Giải thích từng thành phần:
 ---
 ## PHƯƠNG THỨC NON-STATIC
 - Phương thức không phải static, còn gọi là phương thức thể hiện (instance method), là những phương thức mà bạn chỉ có thể gọi sau khi tạo một đối tượng của lớp chứa phương thức đó. Những phương thức này có thể truy cập và thay đổi các thành viên (biến) không phải static trong lớp, vì chúng hoạt động trên đối tượng cụ thể của lớp đó.
+
 **1. Cách khai báo phương thức không phải static:**
 Phương thức không phải static có thể có các thành phần giống như phương thức static, chỉ khác là bạn không dùng từ khóa static trước void (hoặc kiểu trả về).
+
 ```java
 public class MyClass {
     int x;  // Biến thể hiện (instance variable)
@@ -49,6 +51,7 @@ public class MyClass {
     }
 }
 ```
+
 **2. Sự khác biệt giữa phương thức static và phương thức không phải static:**
 - Phương thức static:
     - Có thể được gọi mà không cần tạo đối tượng của lớp.

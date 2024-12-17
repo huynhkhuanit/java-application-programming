@@ -1,0 +1,16 @@
+# Bỏ qua tất cả các file biên dịch Java
+*.class
+
+# Bỏ qua các file log
+*.log
+
+# Bỏ qua thư mục biên dịch
+bin/
+
+# Bỏ qua thư mục IDE (ví dụ IntelliJ hoặc VSCode)
+.idea/
+.vscode/
+
+# Bỏ qua file hệ thống
+.DS_Store
+Thumbs.db

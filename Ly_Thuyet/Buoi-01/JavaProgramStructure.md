@@ -6,6 +6,7 @@
 ---
 ## 1. CẤU TRÚC CƠ BẢN CỦA JAVA
 > Một chương trình Java cơ bản luôn bắt đầu từ một lớp (class) và có một phương thức main để thực thi mã.
+
 ```java
 public class Main {
     public static void main(String[] args) {

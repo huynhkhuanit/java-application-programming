@@ -39,7 +39,7 @@ Giải thích từng thành phần:
     - `System`: Là một lớp có sẵn trong Java, cung cấp nhiều phương thức tiện ích cho các tác vụ nhập xuất.
     - `out`: Là một đối tượng PrintStream của lớp System, dùng để xuất dữ liệu ra màn hình console.
     - `println`: Là phương thức của đối tượng out, dùng để in ra một dòng văn bản (và xuống dòng sau khi in).
-    
+
 ---
 
 ## PHƯƠNG THỨC NON-STATIC
@@ -104,8 +104,11 @@ public class Student {
 
 - Giải thích ví dụ trên:
     - Lớp Student có hai thuộc tính name và score, đây là các biến thể hiện (instance variables).
+    
     - Phương thức printInfo là phương thức không phải static. Nó sẽ in ra tên và điểm của đối tượng Student mà phương thức này được gọi.
+
     - Trong phương thức main, bạn tạo đối tượng student1 của lớp Student và gán giá trị cho các thuộc tính name và score. Sau đó, bạn gọi phương thức printInfo thông qua đối tượng student1.
+
 ---
 
 > Lưu ý: Bạn không thể truy cập trực tiếp vào các biến thể hiện mà không có phương thức cụ thể.

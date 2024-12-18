@@ -39,7 +39,9 @@ Giải thích từng thành phần:
     - `System`: Là một lớp có sẵn trong Java, cung cấp nhiều phương thức tiện ích cho các tác vụ nhập xuất.
     - `out`: Là một đối tượng PrintStream của lớp System, dùng để xuất dữ liệu ra màn hình console.
     - `println`: Là phương thức của đối tượng out, dùng để in ra một dòng văn bản (và xuống dòng sau khi in).
+    
 ---
+
 ## PHƯƠNG THỨC NON-STATIC
 - Phương thức không phải static, còn gọi là phương thức thể hiện (instance method), là những phương thức mà bạn chỉ có thể gọi sau khi tạo một đối tượng của lớp chứa phương thức đó. Những phương thức này có thể truy cập và thay đổi các thành viên (biến) không phải static trong lớp, vì chúng hoạt động trên đối tượng cụ thể của lớp đó.
 

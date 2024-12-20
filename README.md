@@ -20,7 +20,7 @@ Kho tài liệu này chứa một chuỗi bài học có hệ thống về lập
 
 ## 📚 Mục lục | Đang hoàn thiện
 
-### 1. [Buổi 01: Cơ Bản Java và Cấu Trúc Chương Trình](Ly_Thuyet/Buoi-01/JavaProgramStructure.md)
+### 1. [Buổi 01: Cơ Bản Java và Cấu Trúc Chương Trình](./Ly_Thuyet/Buoi-01/Buoi01_JavaSyntax.md)
    - Tìm hiểu cấu trúc cơ bản của một chương trình Java.
    - Hiểu các kiểu dữ liệu nguyên thủ và tham chiếu.
    - Khám phá phương thức `main`, identifiers và biến.

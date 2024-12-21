@@ -2,6 +2,12 @@
   <img src="./assets/img/Java-Logo.png" alt="Description" width="300"/>
 </p>
 
+<style>
+html {
+    scroll-behavior: smooth;
+}
+</style>
+
 ---
 
 # MỤC LỤC:

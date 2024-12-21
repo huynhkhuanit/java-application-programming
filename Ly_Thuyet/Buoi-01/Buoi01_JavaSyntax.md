@@ -24,7 +24,22 @@
     - [5.2.4. Toán Tử Logic Trong Java (Logical Operators):](#524-toán-tử-logic-trong-java-logical-operators)
     - [5.2.5. Toán tử bit trong Java (Bitwise Operators):](#525-toán-tử-bit-trong-java-bitwise-operators)
 - [6. CÂU LỆNH ĐIỀU KIỆN (CONDITIONALS)](#6-câu-lệnh-điều-kiện-conditionals)
-  - [6.1. ĐANG THỰC HIỆN](#61-đang-thực-hiện)
+  - [6.1. CẤU TRÚC RẼ NHÁNH](#61-cấu-trúc-rẽ-nhánh)
+  - [6.2. Câu lệnh `if`](#62-câu-lệnh-if)
+  - [6.3. Câu lệnh `if-else`](#63-câu-lệnh-if-else)
+  - [6.4. Câu lệnh `else if`](#64-câu-lệnh-else-if)
+  - [6.5. Câu lệnh `switch case`](#65-câu-lệnh-switch-case)
+  - [6.6 Toán tử 3 ngôi (`Ternary Operator`)](#66-toán-tử-3-ngôi-ternary-operator)
+  - [6.7. Đặc điểm và lưu ý của câu điều kiện](#67-đặc-điểm-và-lưu-ý-của-câu-điều-kiện)
+  - [6.8. Chuyên Sâu và Các Trường Hợp Đặc Biệt](#68-chuyên-sâu-và-các-trường-hợp-đặc-biệt)
+- [7. BIẾN VÀ PHẠM VI CỦA BIẾN](#7-biến-và-phạm-vi-của-biến)
+  - [7.1. Biến Cục Bộ (Local Variable)](#71-biến-cục-bộ-local-variable)
+  - [7.2. Biến Thành Viên (Instance Variable)](#72-biến-thành-viên-instance-variable)
+  - [7.3. Biến Tĩnh (Static Variable)](#73-biến-tĩnh-static-variable)
+  - [7.4. Biến Hằng (Final Variable)](#74-biến-hằng-final-variable)
+  - [7.5. Biến Truyền Vào (Parameter Variable)](#75-biến-truyền-vào-parameter-variable)
+  - [7.6. Biến Khối Lệnh (Block Variable)](#76-biến-khối-lệnh-block-variable)
+  - [7.7. So Sánh Các Kiểu Biến](#77-so-sánh-các-kiểu-biến)
 
 ---
 

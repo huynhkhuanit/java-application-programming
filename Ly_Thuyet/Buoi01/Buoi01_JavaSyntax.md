@@ -1383,12 +1383,12 @@ Trong chương tiếp theo, bạn sẽ bước vào thế giới của **Lập T
 /* Định nghĩa CSS cho hai banner */
 .banner-left {
   position: fixed;
-  left: 10px;
+  left: 30px;
   top: 50%;
   transform: translateY(-50%);
   width: 200px;
   height: auto;
-  background-color: #f3f4f6;
+  background-color: #fff;
   color: #333;
   text-align: center;
   padding: 10px;
@@ -1400,12 +1400,12 @@ Trong chương tiếp theo, bạn sẽ bước vào thế giới của **Lập T
 
 .banner-right {
   position: fixed;
-  right: 10px;
+  right: 30px;
   top: 50%;
   transform: translateY(-50%);
   width: 200px;
   height: auto;
-  background-color: #f3f4f6;
+  background-color: #fff;
   color: #333;
   text-align: center;
   padding: 10px;

@@ -1379,6 +1379,75 @@ Trong chương tiếp theo, bạn sẽ bước vào thế giới của **Lập T
     </ul>
 </div>
 
+<style>
+/* Định nghĩa CSS cho hai banner */
+.banner-left {
+  position: fixed;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: auto;
+  background-color: #f3f4f6;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+  font-family: system-ui;
+  z-index: 1000;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.banner-right {
+  position: fixed;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px;
+  height: auto;
+  background-color: #f3f4f6;
+  color: #333;
+  text-align: center;
+  padding: 10px;
+  font-family: system-ui;
+  z-index: 1000;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.banner-left a, .banner-right a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.banner-left a:hover, .banner-right a:hover {
+  text-decoration: underline;
+}
+
+.banner-left h3, .banner-right h3 {
+    background: linear-gradient(90deg, #5ebbff, #a174ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+</style>
+
+<!-- Banner bên trái -->
+<div class="banner-left">
+  <h3>Java Tips</h3>
+  <a href="https://www.oracle.com/java/">📃 Learn Java</a><br>
+  <a href="https://www.baeldung.com/">📄 Baeldung</a>
+</div>
+
+<!-- Banner bên phải -->
+<div class="banner-right">
+  <h3>Programming</h3>
+  <a href="https://roadmap.sh/java">🗺️ Java Roadmap</a><br>
+  <a href="https://github.com/huynhkhuanit">GitHub | huynhkhuanit</a>
+</div>
+
 
 ---
 

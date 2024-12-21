@@ -40,6 +40,21 @@
   - [7.5. Biến Truyền Vào (Parameter Variable)](#75-biến-truyền-vào-parameter-variable)
   - [7.6. Biến Khối Lệnh (Block Variable)](#76-biến-khối-lệnh-block-variable)
   - [7.7. So Sánh Các Kiểu Biến](#77-so-sánh-các-kiểu-biến)
+- [8. CẤU TRÚC LẶP (LOOP)](#8-cấu-trúc-lặp-loop)
+  - [8.1. CẤU TRÚC `FOR`](#81-cấu-trúc-for)
+  - [8.2. Lặp với `while`](#82-lặp-với-while)
+  - [8.3. Lặp với `do-while`](#83-lặp-với-do-while)
+  - [8.4. So Sánh Các Cấu Trúc Lặp](#84-so-sánh-các-cấu-trúc-lặp)
+  - [8.5. Bài tập thực hành](#85-bài-tập-thực-hành)
+    - [8.5.1. Bài cơ bản](#851-bài-cơ-bản)
+    - [8.5.2. Bài nâng cao](#852-bài-nâng-cao)
+  - [🎉 Chúc Mừng Bạn Đã Hoàn Thành Chương 1! 🎉](#chúc-mừng-bạn-đã-hoàn-thành-chương-1)
+    - [📘 **Java Syntax and Basics**](#java-syntax-and-basics)
+    - [🌟 **Điểm Nhấn Của Chương 1**](#điểm-nhấn-của-chương-1)
+    - [⚒️ **Sẵn Sàng Cho Chương 2?**](#sẵn-sàng-cho-chương-2)
+    - [📅 **Đề Xuất Bài Tập Trước Chương 2**](#đề-xuất-bài-tập-trước-chương-2)
+  - [🚀 **Hãy Tiếp Tục Hành Trình Java Developer của Bạn!** 🚀](#hãy-tiếp-tục-hành-trình-java-developer-của-bạn)
+    - [🔗 **Theo Dõi Lộ Trình Học**](#🔗-theo-dõi-lộ-trình-học)
 
 ---
 
@@ -1147,6 +1162,226 @@ public class BitwiseOperators {
 | **Hằng**       | final       | Toàn bộ lớp hoặc phương thức      | Stack/Heap   | Không thể thay đổi   |
 | **Tham Số**    | Không       | Trong phạm vi phương thức         | Stack        | Không có             |
 
+---
+
+# 8. CẤU TRÚC LẶP (LOOP)
+
+## 8.1. CẤU TRÚC `FOR`
+
+- Định nghĩa
+    - Câu lệnh `for` trong `Java` được sử dụng khi bạn biết trước số lần lặp hoặc phạm vi lặp. Nó được thiết kế để thực hiện các vòng lặp cố định với cú pháp ngắn gọn.
+    - Cú pháp tương tự như các ngôn ngữ `C, C++` khác.
+
+- Cú pháp:
+
+    ```java
+    for (khởi tạo; điều kiện; cập nhật) {
+        // Khối lệnh thực thi
+    }
+    ```
+
+    - `khởi tạo`: Khởi tạo biến điều khiển, thực thi một lần trước vòng lặp.
+    - `điều kiện`: Kiểm tra điều kiện để tiếp tục lặp.
+    - `cập nhật`: Thay đổi giá trị của biến điều khiển sau mỗi vòng lặp.
+
+- Ví dụ:
+
+    ```java
+    for (int i = 1; i <= 5; i++) {
+        System.out.println("Lần lặp thứ: " + i);
+    }
+    ```
+
+- Trường hợp sử dụng:
+    - Lặp với số lần xác định.
+    - Lặp qua một mảng hoặc danh sách bằng vòng lặp for-each.
+    - Lưu ý
+    - Điều kiện phải kết thúc, tránh trường hợp lặp vô hạn (ví dụ: for (`;;`) `{}`).
+    - Có thể sử dụng từ khóa break để thoát vòng lặp sớm và continue để bỏ qua lần lặp hiện tại.
+
+## 8.2. Lặp với `while`
+
+- Định nghĩa
+    - Câu lệnh `while` được sử dụng khi bạn không biết trước số lần lặp nhưng có điều kiện để tiếp tục lặp.
+
+- Cú pháp
+
+    ```java
+    while (điều kiện) {
+        // Khối lệnh thực thi
+    }
+    ```
+
+    - `điều kiện`: Được kiểm tra trước mỗi vòng lặp. Nếu điều kiện sai ngay từ đầu, vòng lặp sẽ không thực thi lần nào.
+
+- Ví dụ:
+
+    ```java
+    int i = 1;
+    while (i <= 5) {
+        System.out.println("Lần lặp thứ: " + i);
+        i++;
+    }
+    ```
+
+- Trường hợp sử dụng:
+    - Khi số lần lặp không xác định và phụ thuộc vào điều kiện.
+    - Ví dụ: Lặp đến khi người dùng nhập đúng mật khẩu.
+- Lưu ý:
+    - Đảm bảo điều kiện thoát vòng lặp, nếu không sẽ dẫn đến lặp vô hạn.
+    - Nếu điều kiện luôn đúng (như while (true)), bạn cần sử dụng break để thoát vòng lặp.
+
+## 8.3. Lặp với `do-while`
+
+- Định nghĩa
+    - Câu lệnh `do-while` giống như `while`, nhưng điểm khác biệt là nó đảm bảo vòng lặp được thực hiện ít nhất một lần, bất kể điều kiện ban đầu.
+
+- Cú pháp:
+
+    ```java
+    do {
+        // Khối lệnh thực thi
+    } while (điều kiện);
+    ```
+
+    - `điều kiện`: Được kiểm tra sau khi thực hiện vòng lặp.
+
+- Ví dụ:
+
+    ```java
+    int i = 1;
+    do {
+        System.out.println("Lần lặp thứ: " + i);
+        i++;
+    } while (i <= 5);
+    ```
+
+- Trường hợp sử dụng:
+    - Khi cần thực thi ít nhất một lần trước khi kiểm tra điều kiện.
+    - Ví dụ: Yêu cầu nhập liệu từ người dùng và kiểm tra tính hợp lệ.
+- Lưu ý:
+    - Điều kiện được kiểm tra sau vòng lặp, nên cẩn thận để tránh thực hiện lặp không mong muốn.
+    - Sử dụng khi bạn chắc chắn cần thực hiện ít nhất một lần.
+
+## 8.4. So Sánh Các Cấu Trúc Lặp
+
+| **Đặc điểm**             | **for**                                                 | **while**                       | **do-while**                      |
+|--------------------------|---------------------------------------------------------|---------------------------------|-----------------------------------|
+| **Kiểm tra điều kiện**   | Trước vòng lặp                                          | Trước vòng lặp                  | Sau vòng lặp                      |
+| **Số lần lặp tối thiểu** | 0 lần                                                   | 0 lần                           | Ít nhất 1 lần                     |
+| **Phạm vi sử dụng**      | Khi biết trước số lần lặp                               | Khi không biết trước số lần lặp | Khi cần thực hiện ít nhất một lần |
+| **Cú pháp**              | Gọn gàng, tích hợp đầy đủ khởi tạo, điều kiện, cập nhật | Chỉ có điều kiện                | Chỉ có điều kiện                  |
+
+<div style="font-family: system-ui; padding: 10px; border: 1px solidrgb(255, 255, 255); border-radius: 5px; background-color:rgb(191, 56, 56); color: #fff">
+  <strong style="display: block; font-weight: bold; text-align: center;">🚫 CAUTION: CÁC LỖI THƯỜNG GẶP</strong> 
+  <ol>
+    <li style="margin-top: 16px;">Lặp vô hạn: Điều kiện luôn đúng.</li>
+    <li>Sai điều kiện thoát.</li>
+    <li>Quên cập nhật biến điều khiển.</li>
+  </ol>
+</div>
+
+<br>
+
+<div style="font-family: system-ui; padding: 10px; border: 1px solidrgb(255, 255, 255); border-radius: 5px; background-color: #49b958; color: #fff">
+  <strong style="display: block; font-weight: bold; text-align: center;">💡 TIPs: CÁC TIPS SỬ DỤNG VÒNG LẶP HIỆU QUẢ</strong> 
+  <ol>
+    <li style="margin-top: 16px;">Xác định điều kiện lặp.</li>
+    <li>Biết trường hợp sử dụng của chúng.</li>
+    <li>Tránh quên cập nhật biến điều khiển.</li>
+  </ol>
+</div>
+
+## 8.5. Bài tập thực hành
+
+### 8.5.1. Bài cơ bản
+
+- In ra dãy số từ 1 đến 10 bằng cả 3 cấu trúc lặp.
+- Tính tổng các số chẵn từ 1 đến 100.
+
+### 8.5.2. Bài nâng cao
+- Viết chương trình kiểm tra số nguyên tố trong phạm vi 1 đến N.
+- Tạo menu đơn giản sử dụng vòng lặp do-while:
+    - Lựa chọn 1: In dãy Fibonacci.
+    - Lựa chọn 2: Kiểm tra số chính phương.
+    - Lựa chọn 3: Thoát chương trình.
+
+---
+
+## 🎉 Chúc Mừng Bạn Đã Hoàn Thành Chương 1! 🎉
+
+---
+
+### 📘 **Java Syntax and Basics**
+Bạn đã nắm được các kiến thức quan trọng về:
+- ✅ Cấu trúc chương trình Java.
+- ✅ Cú pháp cơ bản: biến, kiểu dữ liệu, toán tử.
+- ✅ Các câu lệnh điều kiện và vòng lặp.
+- ✅ Khả năng thao tác cơ bản với mảng và chuỗi.
+
+---
+
+### 🌟 **Điểm Nhấn Của Chương 1**
+💡 **Hiểu rõ cấu trúc chương trình Java**:
+- Biết cách viết chương trình đầu tiên với `main()`.
+- Sử dụng đúng cú pháp để khai báo và sử dụng biến.
+
+💡 **Thực hành với toán tử và cấu trúc rẽ nhánh**:
+- Hiểu cách vận hành toán tử logic, so sánh, số học.
+- Tạo các chương trình đơn giản với `if-else`, `for`, `while`.
+
+💡 **Thành thạo vòng lặp**:
+- Biết cách sử dụng vòng lặp `for`, `while`, `do-while` hiệu quả.
+
+---
+
+### ⚒️ **Sẵn Sàng Cho Chương 2?**
+Trong chương tiếp theo, bạn sẽ bước vào thế giới của **Lập Trình Hướng Đối Tượng (OOP)**:
+- 🏛 **Hiểu các nguyên lý OOP**: Đóng gói, kế thừa, đa hình, trừu tượng hóa.
+- 🛠 **Xây dựng và thao tác với lớp (class)**: Constructor, phương thức, thuộc tính.
+- 🔄 **Thực hành với các mẫu thiết kế đơn giản**.
+
+---
+
+### 📅 **Đề Xuất Bài Tập Trước Chương 2**
+1. Tạo chương trình tính tổng, trung bình, và in các số chẵn từ 1 đến N.
+2. Viết chương trình kiểm tra xem một số nguyên nhập vào có phải số nguyên tố hay không.
+3. Viết chương trình in bảng cửu chương.
+
+---
+
+## 🚀 **Hãy Tiếp Tục Hành Trình Java Developer của Bạn!** 🚀
+
+---
+
+<div style="
+    text-align: center; 
+    padding: 20px; 
+    border-radius: 15px; 
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    border: 1px solid #90caf9; 
+    color: #0d47a1;
+    font-family: Arial, sans-serif;
+    margin: 20px 0;
+">
+    <h3 style="margin-bottom: 15px; font-size: 1.5em;">💻 <strong style="color: #000; text-transform: uppercase; font-weight: bold;">Tài Nguyên Hữu Ích</strong></h3>
+    <ul style="list-style-type: none; padding: 0; margin: 0; font-size: 1.1em;">
+        <li style="margin: 10px 0;">📚 <a href="https://docs.oracle.com/en/java/" style="color: #1565c0; text-decoration: none; font-weight: bold;">Java Documentation</a></li>
+        <li style="margin: 10px 0;">🌐 <a href="https://www.baeldung.com/java-tutorial" style="color: #1565c0; text-decoration: none; font-weight: bold;">Java Programming on Baeldung</a></li>
+        <li style="margin: 10px 0;">🎥 <a href="https://www.youtube.com/results?search_query=learn+java+programming" style="color: #1565c0; text-decoration: none; font-weight: bold;">Learn Java on YouTube</a></li>
+    </ul>
+</div>
+
+
+---
+
+### 🔗 **Theo Dõi Lộ Trình Học**
+🌍 **Xem toàn bộ roadmap tại:** [Java Developer Roadmap](https://roadmap.sh/java)
+
+---
+
+> **Hãy nhớ:** Kiến thức là vô tận, thực hành là chìa khóa! Hãy tiếp tục viết mã và khám phá thế giới Java!
 
 
 <!-- Button to TOP CSS -->

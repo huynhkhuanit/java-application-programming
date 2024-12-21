@@ -1,3 +1,5 @@
+package Ly_Thuyet.Buoi01;
+
 /*
     CẤU TRÚC CHƯƠNG TRÌNH JAVA
         - Một chương trình Java cơ bản luôn bắt đầu từ một lớp (class) và có một phương thức main để thực thi mã.

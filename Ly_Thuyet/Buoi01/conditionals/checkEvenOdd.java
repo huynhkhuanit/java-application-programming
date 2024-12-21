@@ -1,6 +1,7 @@
 // Bài code 1: Kiểm tra chẵn lẻ của một số nguyên
 
-package Ly_Thuyet.conditionals;
+package Ly_Thuyet.Buoi01.conditionals;
+
 
 public class checkEvenOdd {
     public static void main(String[] args) {

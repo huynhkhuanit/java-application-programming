@@ -1,3 +1,5 @@
+package Ly_Thuyet.Buoi01;
+
 public class Example02 {
     public static void main(String[] args) {
         int length = 10;

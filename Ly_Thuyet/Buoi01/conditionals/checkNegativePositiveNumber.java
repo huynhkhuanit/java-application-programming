@@ -1,6 +1,6 @@
 // Bài code 2: Kiểm tra số âm số dương của một số nguyên
 
-package Ly_Thuyet.conditionals;
+package Ly_Thuyet.Buoi01.conditionals;
 
 public class checkNegativePositiveNumber {
     public static void main(String[] args) {

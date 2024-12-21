@@ -18,7 +18,7 @@ def generate_toc(md_file):
     return '\n'.join(toc)
 
 # Sử dụng script:
-md_file = './Ly_Thuyet/Buoi-01/Buoi01_JavaSyntax.md'  # Đổi 'file.md' thành tên file Markdown của bạn
+md_file = './Ly_Thuyet/Buoi01/Buoi01_JavaSyntax.md'  # Đổi 'file.md' thành tên file Markdown của bạn
 toc = generate_toc(md_file)
 print("MỤC LỤC:")
 print(toc)

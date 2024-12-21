@@ -1,3 +1,5 @@
+package Ly_Thuyet.Buoi01;
+
 // Viết chương trình in ra thông tin sinyh viên
 
 public class Example01 {

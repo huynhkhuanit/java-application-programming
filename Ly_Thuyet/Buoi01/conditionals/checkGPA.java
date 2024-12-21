@@ -1,6 +1,6 @@
 // Bài code 4: Kiểm tra học lực của học sinh dựa trên điểm số
 
-package Ly_Thuyet.conditionals;
+package Ly_Thuyet.Buoi01.conditionals;
 
 public class checkGPA {
     public static void main(String[] args) {

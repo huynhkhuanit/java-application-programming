@@ -1,6 +1,6 @@
 // Bài code 3: Kiểm tra năm nhuận
 
-package Ly_Thuyet.conditionals;
+package Ly_Thuyet.Buoi01.conditionals;
 
 public class checkLeapYear {
     public static void main(String[] args) {

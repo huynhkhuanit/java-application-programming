@@ -48,13 +48,13 @@
   - [8.5. Bài tập thực hành](#85-bài-tập-thực-hành)
     - [8.5.1. Bài cơ bản](#851-bài-cơ-bản)
     - [8.5.2. Bài nâng cao](#852-bài-nâng-cao)
-  - [🎉 Chúc Mừng Bạn Đã Hoàn Thành Chương 1! 🎉](#chúc-mừng-bạn-đã-hoàn-thành-chương-1)
-    - [📘 **Java Syntax and Basics**](#java-syntax-and-basics)
-    - [🌟 **Điểm Nhấn Của Chương 1**](#điểm-nhấn-của-chương-1)
-    - [⚒️ **Sẵn Sàng Cho Chương 2?**](#sẵn-sàng-cho-chương-2)
-    - [📅 **Đề Xuất Bài Tập Trước Chương 2**](#đề-xuất-bài-tập-trước-chương-2)
-  - [🚀 **Hãy Tiếp Tục Hành Trình Java Developer của Bạn!** 🚀](#hãy-tiếp-tục-hành-trình-java-developer-của-bạn)
-    - [🔗 **Theo Dõi Lộ Trình Học**](#🔗-theo-dõi-lộ-trình-học)
+  - [🎉 Chúc Mừng Bạn Đã Hoàn Thành Chương 1! 🎉](#-chúc-mừng-bạn-đã-hoàn-thành-chương-1)
+    - [📘 **Java Syntax and Basics**](#-java-syntax-and-basics)
+    - [🌟 **Điểm Nhấn Của Chương 1**](#-điểm-nhấn-của-chương-1)
+    - [⚒️ **Sẵn Sàng Cho Chương 2?**](#-sẵn-sàng-cho-chương-2)
+    - [📅 **Đề Xuất Bài Tập Trước Chương 2**](#-đề-xuất-bài-tập-trước-chương-2)
+  - [🚀 **Hãy Tiếp Tục Hành Trình Java Developer của Bạn!** 🚀](#-hãy-tiếp-tục-hành-trình-java-developer-của-bạn)
+    - [🔗 **Theo Dõi Lộ Trình Học**](#-theo-dõi-lộ-trình-học)
 
 ---
 

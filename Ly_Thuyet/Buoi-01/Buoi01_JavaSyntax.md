@@ -770,9 +770,369 @@ public class BitwiseOperators {
 
 # 6. CÂU LỆNH ĐIỀU KIỆN (CONDITIONALS)
 
-## 6.1. ĐANG THỰC HIỆN
+- Câu lệnh điều kiện là một trong những thành phần cơ bản của bất kỳ ngôn ngữ lập trình nào, bao gồm cả Java. Nó cho phép chương trình thực hiện các hành động khác nhau dựa trên điều kiện cụ thể.
 
-- **In Process... *Loading*... 🔃**
+## 6.1. CẤU TRÚC RẼ NHÁNH
+
+- Cấu trúc rẽ nhánh trong Java được sử dụng để điều hướng luồng thực thi dựa trên kết quả của các điều kiện logic (true hoặc false).
+- Cấu trúc phổ biến:
+    - `if`
+    - `if-else`
+    - `else if`
+    - `switch-case`
+    - `Toán tử ba ngôi (ternary operator)`.
+
+## 6.2. Câu lệnh `if`
+
+- Cú pháp:
+
+    ```java 
+    if (condition) {
+        // Khối lệnh thực thi khi điều kiện là true
+    }
+    ```
+
+- Lưu ý:
+
+    ```java
+    int age = 18;
+    if (age >= 18) {
+        System.out.println("Bạn đủ tuổi để bỏ phiếu.");
+    }
+    ```
+
+    - Điều kiện trong if phải trả về kiểu boolean (true hoặc false).
+    - Không được sử dụng dấu = thay vì ==, điều này dễ gây lỗi logic.
+
+## 6.3. Câu lệnh `if-else`
+
+- Sử dụng `if-else` khi muốn thực hiện một hành động nếu điều kiện đúng và một hành động khác nếu điều kiện sai.
+
+- Cú pháp:
+
+    ```java
+    if (condition) {
+        // Thực thi khi điều kiện là true
+    } else {
+        // Thực thi khi điều kiện là false
+    }
+    ```
+
+- Ví dụ:
+
+    ```java
+    int number = 10;
+    if (number % 2 == 0) {
+        System.out.println("Số chẵn.");
+    } else {
+        System.out.println("Số lẻ.");
+    }
+    ```
+
+- Lưu ý:
+    - Khối `else` là tùy chọn; nếu không cần hành động nào khi điều kiện sai, bạn chỉ cần `if`.
+
+## 6.4. Câu lệnh `else if`
+
+- Sử dụng `else if` để kiểm tra nhiều điều kiện.
+- `Java` sẽ kiểm tra từng điều kiện từ trên xuống dưới; nếu một điều kiện đúng, các điều kiện phía sau sẽ bị bỏ qua.
+
+- Cú pháp:
+
+    ```java
+    if (condition1) {
+        // Thực thi khi condition1 đúng
+    } else if (condition2) {
+        // Thực thi khi condition1 sai và condition2 đúng
+    } else {
+        // Thực thi khi tất cả điều kiện trên đều sai
+    }
+    ```
+
+- Ví dụ:
+
+    ```java
+    int score = 85;
+    if (score >= 90) {
+        System.out.println("Xếp loại: A");
+    } else if (score >= 80) {
+        System.out.println("Xếp loại: B");
+    } else if (score >= 70) {
+        System.out.println("Xếp loại: C");
+    } else {
+        System.out.println("Xếp loại: D");
+    }
+    ```
+
+- Lưu Ý:
+    - Nên đặt các điều kiện từ cụ thể đến tổng quát để tránh `logic` sai.
+    - Quá nhiều `else if` có thể làm mã khó đọc; hãy cân nhắc sử dụng `switch-case` nếu phù hợp.
+
+## 6.5. Câu lệnh `switch case`
+
+- Thường được sử dụng khi cần so sánh một giá trị với nhiều giá trị cụ thể.
+- Hoạt động tốt với các kiểu dữ liệu: int, char, String, enum.
+
+- Cú pháp:
+
+    ```java
+    switch (expression) {
+        case value1:
+            // Khối lệnh nếu expression == value1
+            break;
+        case value2:
+            // Khối lệnh nếu expression == value2
+            break;
+        default:
+            // Khối lệnh nếu không có giá trị nào khớp
+    }
+    ```
+
+- Ví dụ:
+
+    ```java
+    int day = 3;
+    switch (day) {
+        case 1:
+            System.out.println("Thứ Hai");
+            break;
+        case 2:
+            System.out.println("Thứ Ba");
+            break;
+        case 3:
+            System.out.println("Thứ Tư");
+            break;
+        default:
+            System.out.println("Không hợp lệ");
+    }
+    ```
+
+- Lưu Ý:
+    - Từ khóa `break`:
+        - Ngăn việc tiếp tục thực thi các case phía dưới.
+        - Nếu không sử dụng break, chương trình sẽ tiếp tục chạy từ case khớp đến hết các case còn lại (`fall-through`).
+    - `Default`:
+        - Là case mặc định, thực thi nếu không có case nào khớp.
+        - Không bắt buộc nhưng nên có để xử lý trường hợp không mong muốn.
+
+## 6.6 Toán tử 3 ngôi (`Ternary Operator`)
+
+- Là câu lệnh điều kiện rút gọn, thường dùng cho các điều kiện đơn giản.
+
+- Cú pháp:
+
+    ```java
+    result = (condition) ? value_if_true : value_if_false;
+    ```
+
+- Ví dụ:
+
+    ```java
+    int number = 10;
+    String result = (number % 2 == 0) ? "Số chẵn" : "Số lẻ";
+    System.out.println(result);
+    ```
+
+- Lưu Ý:
+    - Không nên sử dụng toán tử ba ngôi cho các logic phức tạp vì sẽ làm mã khó đọc.
+
+## 6.7. Đặc điểm và lưu ý của câu điều kiện
+
+- **Đặc Điểm**
+    - Tăng tính linh hoạt của chương trình.
+    - Giúp chương trình đưa ra các quyết định dựa trên điều kiện cụ thể.
+- **Lưu Ý**
+    - **Đảm bảo điều kiện đúng logic:**
+        - Các điều kiện phải rõ ràng, chính xác và không chồng chéo.
+    - **Thứ tự ưu tiên:**
+        - Kiểm tra các điều kiện từ trên xuống; đặt điều kiện cụ thể trước các điều kiện tổng quát.
+    - **Hiệu suất:**
+        - Sử dụng switch-case thay vì if-else khi có nhiều lựa chọn cố định, để tăng hiệu suất.
+    - **Tính đọc hiểu:**
+        - Tránh quá nhiều else if, điều này làm giảm tính dễ đọc của mã.
+        - Sử dụng các khối mã ngắn gọn trong các câu lệnh điều kiện.
+
+## 6.8. Chuyên Sâu và Các Trường Hợp Đặc Biệt
+
+- Lồng nhau (Nested Conditions)
+    - Câu lệnh điều kiện có thể được lồng trong nhau để xử lý các tình huống phức tạp.
+
+- Ví dụ:
+
+    ```java
+    int age = 25;
+    boolean hasLicense = true;
+
+    if (age >= 18) {
+        if (hasLicense) {
+            System.out.println("Bạn đủ điều kiện lái xe.");
+        } else {
+            System.out.println("Bạn cần có giấy phép lái xe.");
+        }
+    } else {
+        System.out.println("Bạn chưa đủ tuổi lái xe.");
+    }
+    ```
+
+- **Tránh Lỗi Phổ Biến**
+    - Lỗi thiếu `break` trong switch-case:
+        - Dẫn đến "fall-through" ngoài ý muốn.
+    - Sử dụng `==` thay vì `=` trong if:
+        - Ví dụ: if (x == 10) thay vì if (x = 10).
+    - Câu lệnh điều kiện không bao giờ xảy ra:
+        - Kiểm tra logic của điều kiện để tránh các khối mã không bao giờ thực thi.
+
+> [!TIP]
+> Bạn phải lưu ý rằng các biến được khai báo trong một `Scope` hoặc được gọi là một `block` chỉ có phạm vi ảnh hưởng trên chính scope đó mà thôi.
+> Nếu bạn gặp phải trường hợp báo lỗi biến chưa được khai báo thì gặp phải chính lỗi này cho nên hãy nhớ nhé, biến phải được khởi tạo bên ngoài và gán giá trị trước đó.
+> Cơ chế thu hồi 
+
+--- 
+
+# 7. BIẾN VÀ PHẠM VI CỦA BIẾN
+
+## 7.1. Biến Cục Bộ (Local Variable)
+
+- **Định nghĩa:**
+    - Biến được khai báo bên trong một phương thức, constructor, hoặc khối lệnh (block {}).
+    - Chỉ tồn tại trong phạm vi của phương thức hoặc khối lệnh đó.
+- **Đặc điểm:**
+    - Không thể sử dụng ngoài phạm vi khai báo.
+    - Không có giá trị mặc định → bắt buộc phải khởi tạo trước khi sử dụng.
+
+- Ví dụ:
+
+    ```java
+    public class Example {
+        public void method() {
+            int localVar = 10; // Biến cục bộ
+            System.out.println("Biến cục bộ: " + localVar);
+        }
+        // System.out.println(localVar); // Lỗi: localVar không tồn tại ở đây
+    }
+    ```
+
+## 7.2. Biến Thành Viên (Instance Variable)
+
+- **Định nghĩa:**
+    - Biến được khai báo bên trong lớp nhưng bên ngoài bất kỳ phương thức, constructor, hoặc block nào.
+    - Là thuộc tính của từng đối tượng và được lưu trong bộ nhớ Heap.
+- **Đặc điểm:**
+    - Có giá trị mặc định (số: 0, boolean: false, đối tượng: null).
+    - Mỗi đối tượng của lớp có bản sao riêng của biến thành viên.
+    - Không cần từ khóa static.
+
+- Ví dụ:
+
+    ```java
+    public class Example {
+        int instanceVar = 20; // Biến thành viên
+
+        public void method() {
+            System.out.println("Biến thành viên: " + instanceVar);
+        }
+    }
+    ```
+
+- Lưu Ý:
+    - Biến thành viên tồn tại trong suốt vòng đời của đối tượng.
+    - Có thể truy cập và sửa đổi thông qua các đối tượng.
+
+## 7.3. Biến Tĩnh (Static Variable)
+- **Định nghĩa:**
+    - Biến được khai báo với từ khóa static.
+    - Thuộc về lớp, không thuộc về bất kỳ đối tượng nào → được chia sẻ bởi tất cả các đối tượng của lớp.
+- **Đặc điểm:**
+    - Có giá trị mặc định giống biến thành viên.
+    - Được khởi tạo khi lớp được nạp vào bộ nhớ (Method Area) và tồn tại cho đến khi chương trình kết thúc.
+    - Có thể truy cập trực tiếp thông qua tên lớp.
+
+- Ví dụ:
+
+    ```java
+    public class Example {
+        static int staticVar = 30; // Biến tĩnh
+
+        public static void main(String[] args) {
+            System.out.println("Biến tĩnh: " + staticVar);
+        }
+    }
+    ```
+
+- Lưu Ý:
+    - Biến tĩnh hữu ích khi cần giá trị chung cho toàn bộ lớp.
+    - Thường được sử dụng cho hằng số (static final).
+
+## 7.4. Biến Hằng (Final Variable)
+- Định nghĩa:
+    - Biến được khai báo với từ khóa final.
+    - Sau khi được gán giá trị lần đầu, không thể thay đổi giá trị.
+- Đặc điểm:
+    - Giá trị của biến hằng không thể bị thay đổi sau khi gán.
+    - Biến final thường kết hợp với từ khóa static để tạo hằng số.
+
+- Ví dụ:
+
+    ```java
+    public class Example {
+        static final double PI = 3.14159; // Biến hằng
+        public static void main(String[] args) {
+            System.out.println("Hằng số: " + PI);
+            // PI = 3.14; // Lỗi: Không thể thay đổi giá trị của hằng số
+        }
+    }
+    ```
+
+## 7.5. Biến Truyền Vào (Parameter Variable)
+
+- **Định nghĩa:**
+    - Biến được khai báo trong danh sách tham số của một phương thức hoặc constructor.
+    - Chỉ tồn tại trong phạm vi của phương thức/constructor đó.
+- **Đặc điểm:**
+    - Chỉ được khởi tạo khi phương thức/constructor được gọi.
+    - Tự động bị thu hồi khi kết thúc phương thức.
+
+- Ví dụ:
+
+    ```java
+    public class Example {
+        public void method(int paramVar) { // Biến truyền vào
+            System.out.println("Tham số: " + paramVar);
+        }
+    }
+    ```
+
+## 7.6. Biến Khối Lệnh (Block Variable)
+
+- **Định nghĩa:**
+    - Biến được khai báo bên trong các khối lệnh {}, chẳng hạn như trong if, for, while.
+    - Chỉ tồn tại trong phạm vi khối đó.
+
+- Ví dụ:
+
+    ```java
+    public class Example {
+        public static void main(String[] args) {
+            if (true) {
+                int blockVar = 10; // Biến khối lệnh
+                System.out.println("Biến khối lệnh: " + blockVar);
+            }
+            // System.out.println(blockVar); // Lỗi: blockVar không tồn tại ở đây
+        }
+    }
+    ```
+
+## 7.7. So Sánh Các Kiểu Biến
+
+| **Loại Biến**  | **Từ Khóa** | **Phạm Vi**                       | **Vùng Nhớ** | **Giá Trị Mặc Định** |
+|----------------|-------------|-----------------------------------|--------------|----------------------|
+| **Cục Bộ**     | Không       | Trong phương thức/block           | Stack        | Không có             |
+| **Thành Viên** | Không       | Trong đối tượng (toàn bộ lớp)     | Heap         | Có                   |
+| **Tĩnh**       | static      | Toàn bộ lớp (chung cho đối tượng) | Method Area  | Có                   |
+| **Hằng**       | final       | Toàn bộ lớp hoặc phương thức      | Stack/Heap   | Không thể thay đổi   |
+| **Tham Số**    | Không       | Trong phạm vi phương thức         | Stack        | Không có             |
+
+
 
 <!-- Button to TOP CSS -->
 <style>

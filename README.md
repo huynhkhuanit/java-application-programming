@@ -31,12 +31,16 @@ Kho tài liệu này chứa một chuỗi bài học có hệ thống về lập
    - Tìm hiểu về phương thước `static` và `non-static`.
       - Sự khác nhau giữa chúng, khi nào nên sử dụng `static` hay `non-static`.
       - Đặc điểm của 2 cách thực hiện này.
+
       - Lưu ý của 2 cách thực hiện này.
+
+
 ---
    - 📝 **Bài tập tổng hợp:  [👉 Open link](./Ly_Thuyet/Buoi01/BaiTap/Exercise.md)**
    - 🔍 **Bài tập cấu trúc rẽ nhánh:  [👉 Open link](./Ly_Thuyet/Buoi01/BaiTap/BT_CauTrucReNhanh.md)**
    - 🔄 **Bài tập cấu trúc lặp:  [👉 Open link](./Ly_Thuyet/Buoi01/BaiTap/BT_CauTrucLap.md)**
 ---
+
 
 ### 2. [Buổi 02: Lập Trình Hướng Đối Tượng (OOP)](LyThuyet/Buoi-02/OOPBasics.md)
    - Tìm hiểu về lớp, đối tượng và phương thức.

@@ -36,9 +36,13 @@ Kho tài liệu này chứa một chuỗi bài học có hệ thống về lập
 
 
 ---
+
+
    - 📝 **Bài tập tổng hợp:  [👉 Open link](./Ly_Thuyet/Buoi01/BaiTap/Exercise.md)**
    - 🔍 **Bài tập cấu trúc rẽ nhánh:  [👉 Open link](./Ly_Thuyet/Buoi01/BaiTap/BT_CauTrucReNhanh.md)**
    - 🔄 **Bài tập cấu trúc lặp:  [👉 Open link](./Ly_Thuyet/Buoi01/BaiTap/BT_CauTrucLap.md)**
+
+
 ---
 
 

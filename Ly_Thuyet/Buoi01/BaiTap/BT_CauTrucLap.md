@@ -22,54 +22,63 @@ Luyện tập sử dụng các cấu trúc lặp `for`, `while`, và `do-while` 
 
 ### 1. ➕ Tính tổng các số từ 1 đến n
 **Mô tả**: Viết chương trình tính tổng các số từ `1` đến `n` bằng cách sử dụng cả ba loại vòng lặp `for`, `while`, và `do-while`.
+- **🧑‍💻 Xem source code tại: [Source code bài 1](./LoopStructure/Bai01.java)**
 
 ---
 
 ### 2. 🧮 In bảng cửu chương
 **Mô tả**: Viết chương trình in bảng cửu chương từ `1` đến `10` sử dụng vòng lặp `for`.
+- **🧑‍💻 Xem source code tại: [Source code bài 2](./LoopStructure/Bai02.java)**
 
 ---
 
 ### 3. 🔢 Tìm số nguyên tố nhỏ hơn n
 **Mô tả**: Viết chương trình tìm tất cả các số nguyên tố nhỏ hơn `n`. Sử dụng vòng lặp `while` để kiểm tra tính nguyên tố.
+- **🧑‍💻 Xem source code tại: [Source code bài 3](./LoopStructure/Bai03.java)**
 
 ---
 
 ### 4. 🔄 Đảo ngược số nguyên
 **Mô tả**: Viết chương trình đảo ngược một số nguyên `n`. Ví dụ, đảo ngược `1234` thành `4321`.
+- **🧑‍💻 Xem source code tại: [Source code bài 4](./LoopStructure/Bai04.java)**
 
 ---
 
 ### 5. 🌟 Kiểm tra số Armstrong
 **Mô tả**: Viết chương trình kiểm tra xem một số có phải là số Armstrong hay không.  
 (Số Armstrong là số có tổng các lũy thừa bậc `n` của các chữ số bằng chính nó, ví dụ `153 = 1^3 + 5^3 + 3^3`).
+- **🧑‍💻 Xem source code tại: [Source code bài 5](./LoopStructure/Bai05.java)**
 
 ---
 
 ### 6. 🧮 Tính tổng các chữ số của một số
 **Mô tả**: Viết chương trình tính tổng các chữ số của một số nguyên `n`. Ví dụ: Tổng các chữ số của `123` là `6`.
+- **🧑‍💻 Xem source code tại: [Source code bài 6](./LoopStructure/Bai06.java)**
 
 ---
 
 ### 7. ⭐ In hình tam giác sao
 **Mô tả**: Viết chương trình in ra hình tam giác sao với chiều cao `n`.  
-
+- **🧑‍💻 Xem source code tại: [Source code bài 7](./LoopStructure/Bai07.java)**
 
 ---
 
 ### 8. 🔗 Tìm ước chung lớn nhất (UCLN)
 **Mô tả**: Viết chương trình tìm ước chung lớn nhất (UCLN) của hai số nguyên `a` và `b` bằng cách sử dụng vòng lặp `do-while`.
+- **🧑‍💻 Xem source code tại: [Source code bài 8](./LoopStructure/Bai08.java)**
 
 ---
 
 ### 9. 🌀 In dãy Fibonacci
 **Mô tả**: Viết chương trình in dãy Fibonacci gồm `n` số đầu tiên. Sử dụng vòng lặp `while` hoặc `for`.
+- **🧑‍💻 Xem source code tại: [Source code bài 9](./LoopStructure/Bai09.java)**
 
 ---
 
 ### 10. 💡 Kiểm tra số hoàn hảo
 **Mô tả**: Viết chương trình kiểm tra xem một số có phải là số hoàn hảo hay không.  
 (Số hoàn hảo là số có tổng các ước (không tính chính nó) bằng chính nó, ví dụ `6 = 1 + 2 + 3`).
+- **🧑‍💻 Xem source code tại: [Source code bài 10](./LoopStructure/Bai10.java)**
 
 ---
 

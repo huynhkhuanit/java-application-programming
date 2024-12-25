@@ -1,0 +1,23 @@
+<div class="notice note">
+  <p class="bold large">💡 Note</p> 
+  <ol>
+    <li>Các tham số luôn được truyền bằng tham trị (value) trong Java.</li>
+    <li>Thay đổi giá trị của biến được truyền bằng 2 cách là sử dụng mảng hoặc đối tượng.</li>
+  </ol>
+</div>
+
+<div class="notice tip">
+  <p><strong>✅ Tip</strong></p> Here's a helpful tip to improve your work.
+</div>
+
+<div class="notice important">
+  <p><strong>🔑 Important</strong></p> Pay attention to this key point.
+</div>
+
+<div class="notice warning">
+  <p><strong>⚠️ Warning</strong></p> Be careful about this possible issue.
+</div>
+
+<div class="notice caution">
+  <p><strong>❗ Caution:</strong></p> Avoid this to prevent problems.
+</div>

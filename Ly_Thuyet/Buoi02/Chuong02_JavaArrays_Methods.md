@@ -3,6 +3,51 @@
 </p>
 
 <style>
+.notice {
+  padding: 15px;
+  border-left: 6px solid;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.notice.note {
+  background-color: transparent;
+  border-color: #2196f3;
+  color: #0b75c9;
+}
+
+.notice.tip {
+  background-color: transparent;
+  border-color: #4caf50;
+  color: #2e7d32;
+}
+
+.notice.important {
+  background-color: transparent;
+  border-color: #9c27b0;
+  color: #6a1b9a;
+}
+
+.notice.warning {
+  background-color: transparent;
+  border-color: #ffc107;
+  color: #ff8f00;
+}
+
+.notice.caution {
+  background-color: transparent;
+  border-color: #f44336;
+  color: #c62828;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.large {
+  font-size: 2.4rem;
+}
+  
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -459,7 +504,7 @@ public void printDetails(String name, int age) {
             - Tham chiếu đến đối tượng person được truyền vào phương thức.
             - Khi thay đổi thuộc tính của đối tượng trong phương thức, thay đổi này được phản ánh trên đối tượng gốc.
 
-3. S**ự khác biệt giữa Pass by Value và Pass by Reference**
+3. **Sự khác biệt giữa Pass by Value và Pass by Reference**
 
 | **Đặc điểm**                | **Pass by Value**                                  | **Pass by Reference**                               |
 |-----------------------------|----------------------------------------------------|-----------------------------------------------------|
@@ -478,65 +523,633 @@ public void printDetails(String name, int age) {
     - **Cẩn thận với trạng thái đối tượng.**
       - Khi sử dụng tham chiếu, thay đổi trong một phương thức có thể gây lỗi không mong muốn nếu không kiểm soát trạng thái của đối tượng.
 
-5. Ví dụ thực tế về việc truyền tham số trong phương thức
+5. **Ví dụ thực tế về việc truyền tham số trong phương thức**
 
-Hoán đổi giá trị trong Java (sử dụng mảng)
+    - **Hoán đổi giá trị trong Java (sử dụng mảng)**
 
-```java
-import java.util.Scanner;
+      ```java
+      import java.util.Scanner;
 
-public class Main {
-    public static void swap(int[] arr) {
-        int tmp = arr[0];
-        arr[0] = arr[1];
-        arr[1] = tmp;
-    }
-    
-    public static void main(String[] args) {
-        int[] values = {3, 5};
-        System.out.println("Before swap: a = " + values[0] + ", b = " + values[1]);
-        swap(values);
-        System.out.println("After swap: a = " + values[0] + ", b = " + values[1]);
-    }
-}
-```
+      public class Main {
+          public static void swap(int[] arr) {
+              int tmp = arr[0];
+              arr[0] = arr[1];
+              arr[1] = tmp;
+          }
+          
+          public static void main(String[] args) {
+              int[] values = {3, 5};
+              System.out.println("Before swap: a = " + values[0] + ", b = " + values[1]);
+              swap(values);
+              System.out.println("After swap: a = " + values[0] + ", b = " + values[1]);
+          }
+      }
+      ```
 
-Hoán đổi giá trị trong Java (sử dụng đối tượng)
+    - **Hoán đổi giá trị trong Java (sử dụng đối tượng)**
 
-```java
-import java.util.Scanner;
+      ```java
+      import java.util.Scanner;
 
-class Pair {
-    int a, b;
-    
-    Pair(int a, int b) {
-        this.a = a;
-        this.b = b;
-    }
-}
+      class Pair {
+          int a, b;
+          
+          Pair(int a, int b) {
+              this.a = a;
+              this.b = b;
+          }
+      }
 
-public class Main {
-    public static void swap(Pair pair) {
-        int tmp = pair.a;
-        pair.a = pair.b;
-        pair.b = tmp;
-    }
-    
-    public static void main(String[] args) {
-        Pair pair = new Pair(3, 5);
-        System.out.println("Before swap: a = " + pair.a + ", b = " + pair.b);
-        swap(pair);
-        System.out.println("After swap: a = " + pair.a + ", b = " + pair.b);
-    }
-}
-```
+      public class Main {
+          public static void swap(Pair pair) {
+              int tmp = pair.a;
+              pair.a = pair.b;
+              pair.b = tmp;
+          }
+          
+          public static void main(String[] args) {
+              Pair pair = new Pair(3, 5);
+              System.out.println("Before swap: a = " + pair.a + ", b = " + pair.b);
+              swap(pair);
+              System.out.println("After swap: a = " + pair.a + ", b = " + pair.b);
+          }
+      }
+      ```
 
 - Đối với ngôn ngữ `Java`, việc truyền các tham số vào trong phương phức luôn là `pass by value`. Cho nên việc thay đổi giá trị trong Java chỉ dược thực hiện thông qua `mảng` hoặc `đối tượng`, hoặc `wrapper class`.
 - Đối với phương thức `Constructor` và `Destructor` thì tên phương thức phải trùng với tên lớp (`class`).
 
-> [!NOTE]
-> 123
+
+<div class="notice note">
+  <p class="bold large">💡 Note</p> 
+  <ol>
+    <li>Các tham số luôn được truyền bằng tham trị (value) trong Java.</li>
+    <li>Thay đổi giá trị của biến được truyền bằng 2 cách là sử dụng mảng hoặc đối tượng.</li>
+  </ol>
+</div>
+
+## 2. Các ví dụ về phương thức trong Java từ cơ bản đến nâng cao
+
+1. Phương thức cơ bản:
+
+```java
+public class BasicMethod {
+    public static void printMessage() {
+        System.out.println("Hello, this is a simple method!");
+    }
+
+    public static void main(String[] args) {
+        printMessage(); // Gọi phương thức
+    }
+}
+```
+
+2. Phương thức có tham số
+
+```java
+public class MethodWithParameters {
+    public static void greet(String name) {
+        System.out.println("Hello, " + name + "!");
+    }
+
+    public static void main(String[] args) {
+        greet("Alice");
+        greet("Bob");
+    }
+}
+```
+
+3. Phương thức trả về giá trị
+
+```java
+public class MethodWithReturn {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        int sum = add(5, 7);
+        System.out.println("Sum: " + sum);
+    }
+}
+```
+
+4. Phương thức đệ quy
+
+```java
+public class RecursiveMethod {
+    public static int factorial(int n) {
+        if (n == 0) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+
+    public static void main(String[] args) {
+        int result = factorial(5);
+        System.out.println("Factorial: " + result);
+    }
+}
+```
+
+5. Phương thức Overloading
+
+```java
+public class MethodOverloading {
+    public static int add(int a, int b) {
+        return a + b;
+    }
+
+    public static double add(double a, double b) {
+        return a + b;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Sum of integers: " + add(5, 10));
+        System.out.println("Sum of doubles: " + add(5.5, 10.5));
+    }
+}
+```
+
+6. Phương thức sử dụng biến tĩnh
+
+```java
+public class StaticVariableExample {
+    static int count = 0;
+
+    public static void increment() {
+        count++;
+    }
+
+    public static void main(String[] args) {
+        increment();
+        increment();
+        System.out.println("Count: " + count);
+    }
+}
+```
+7. Phương thức truyền tham chiếu
+
+```java
+class Person {
+    String name;
+}
+
+public class ReferenceMethod {
+    public static void changeName(Person person) {
+        person.name = "John Doe";
+    }
+
+    public static void main(String[] args) {
+        Person person = new Person();
+        person.name = "Alice";
+        System.out.println("Before: " + person.name);
+        changeName(person);
+        System.out.println("After: " + person.name);
+    }
+}
+```
+
+8. Phương thức sử dụng mảng
+
+```java
+public class ArrayMethod {
+    public static int findMax(int[] arr) {
+        int max = arr[0];
+        for (int num : arr) {
+            if (num > max) {
+                max = num;
+            }
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 10, 5};
+        System.out.println("Max value: " + findMax(numbers));
+    }
+}
+```
+
+9. Phương thức sử dụng lambda (Java 8)
+
+```java
+import java.util.Arrays;
+
+public class LambdaExample {
+    public static void main(String[] args) {
+        Arrays.asList("Alice", "Bob", "Charlie")
+              .forEach(name -> System.out.println("Hello, " + name));
+    }
+}
+```
+
+10. Phương thức tham chiếu (Method Reference)
+
+```java
+import java.util.Arrays;
+
+public class MethodReferenceExample {
+    public static void printName(String name) {
+        System.out.println("Hello, " + name);
+    }
+
+    public static void main(String[] args) {
+        Arrays.asList("Alice", "Bob", "Charlie")
+              .forEach(MethodReferenceExample::printName);
+    }
+}
+```
+
+11. Phương thức với generic
+
+```java
+public class GenericMethod {
+    public static <T> void printArray(T[] array) {
+        for (T element : array) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        Integer[] intArray = {1, 2, 3, 4};
+        String[] stringArray = {"Hello", "World"};
+
+        printArray(intArray);
+        printArray(stringArray);
+    }
+}
+```
+
+12. Phương thức với varargs
+
+```java
+public class VarargsExample {
+    public static void printNumbers(int... numbers) {
+        for (int num : numbers) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        printNumbers(1, 2, 3);
+        printNumbers(10, 20, 30, 40);
+    }
+}
+```
+
+## 3. Mảng (Array) trong Java
+
+### 3.1. Định nghĩa mảng trong Java
+
+- Mảng (Array) trong Java là một cấu trúc dữ liệu lưu trữ các phần tử có cùng kiểu dữ liệu. Mỗi phần tử trong mảng được xác định bằng chỉ số (index). Mảng có kích thước cố định, được xác định khi khởi tạo.
+
+- Đặc điểm:
+  - Lưu trữ các phần tử cùng kiểu dữ liệu (int, float, String, etc.).
+  - Kích thước cố định, không thể thay đổi sau khi tạo.
+  - Chỉ số của mảng bắt đầu từ 0.
+
+- Khai báo mảng:
+
+  ```java
+  int[] arr;        // Khai báo mảng
+  arr = new int[5]; // Khởi tạo mảng với kích thước 5
+  ```
+
+- Khởi tạo mảng với giá trị ban đầu:
+
+  ```java
+  int[] arr = {1, 2, 3, 4, 5}; // Mảng chứa 5 phần tử
+  ```
+
+### 3.2. Mảng 1 chiều (1D Arrays)
+
+1. Khái niệm
+    - Mảng một chiều là một tập hợp các phần tử được lưu trữ liên tiếp trong bộ nhớ và được truy cập thông qua chỉ số.
+
+2. Cách khai báo
+
+    ```java
+    int[] arr = new int[5];         // Mảng gồm 5 phần tử
+    int[] arr2 = {10, 20, 30, 40}; // Mảng khởi tạo sẵn
+    ```
+
+3. Duyệt 
+
+    ```java
+    for (int i = 0; i < arr.length; i++) {
+        System.out.println(arr[i]); // In từng phần tử của mảng
+    }
+    ```
+
+### 3.3. Mảng 2 chiều (2D Arrays)
+
+1. Khái niệm
+    - Mảng hai chiều là một mảng gồm nhiều mảng một chiều, được biểu diễn dưới dạng bảng với hàng (row) và cột (column).
+
+2. Cách khai báo
+
+    ```java
+    int[][] matrix = new int[3][4];          // Mảng 3 hàng và 4 cột
+    int[][] matrix2 = {{1, 2}, {3, 4}};     // Mảng 2 hàng, 2 cột
+    ```
+
+3. Duyệt mảng 2 chiều
+
+    ```java
+    for (int i = 0; i < matrix.length; i++) {          // Duyệt qua các hàng
+        for (int j = 0; j < matrix[i].length; j++) {   // Duyệt qua các cột
+            System.out.print(matrix[i][j] + " ");
+        }
+        System.out.println();
+    }
+    ```
+
+### 3.4. Mảng động trong Java
+
+1. `ArrayList`
+
+    - Đặc điểm:
+      - Kích thước có thể thay đổi (thêm/xóa phần tử dễ dàng).
+      - Chỉ lưu trữ các đối tượng (wrapper classes nếu cần kiểu dữ liệu nguyên thủy).
+      - Khai báo và sử dụng:
+
+        ```java
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(10);   // Thêm phần tử
+        list.add(20);
+        list.remove(0); // Xóa phần tử tại chỉ số 0
+        System.out.println(list.get(0)); // Truy cập phần tử
+        ```
+
+2. `Vector`
+
+    - Đặc điểm:
+      - Giống ArrayList nhưng thread-safe (sử dụng trong môi trường đa luồng).
+      - Hiệu suất chậm hơn ArrayList do cơ chế đồng bộ hóa.
+      - Khai báo và sử dụng:
+
+        ```java
+        Vector<String> vector = new Vector<>();
+        vector.add("Java");
+        vector.add("Programming");
+        ```
+
+### 3.5. Các thao tác cơ bản với mảng
+
+1. Thêm phần tử
+
+    - Với mảng cố định, bạn không thể thay đổi kích thước. Để thêm phần tử, bạn cần tạo mảng mới:
+
+      ```java
+      int[] arr = {1, 2, 3};
+      int[] newArr = new int[arr.length + 1];
+      System.arraycopy(arr, 0, newArr, 0, arr.length);
+      newArr[newArr.length - 1] = 4;
+      ```
+    - Với `ArrayList`:
+
+      ```java
+      ArrayList<Integer> list = new ArrayList<>();
+      list.add(10);
+      list.add(20); // Thêm phần tử
+      ```
+
+2. Xóa phần tử
+
+    - Với `ArrayList`:
+
+      ```java
+      list.remove(1); // Xóa phần tử tại chỉ số 1
+      ```
+
+3. Sửa phần tử
+
+    ```java
+    arr[0] = 100; // Cập nhật giá trị tại chỉ số 0
+    list.set(0, 200); // Thay đổi phần tử tại chỉ số 0 trong ArrayList
+    ```
+
+4. Tìm kiếm phần tử
+
+    ```java
+    for (int i = 0; i < arr.length; i++) {
+        if (arr[i] == target) {
+            System.out.println("Found at index " + i);
+        }
+    }
+    ```
+
+## 4. ArrayList trong Java
+
+1. **Định nghĩa ArrayList**
+
+    - ArrayList là một lớp trong Java thuộc gói java.util và được sử dụng để lưu trữ danh sách các phần tử. Không giống như mảng tĩnh, 
+    - ArrayList có kích thước linh hoạt, nghĩa là bạn có thể thay đổi số lượng phần tử trong quá trình thực thi chương trình.
+
+    - Đặc điểm:
+
+        - Kích thước động: ArrayList tự động điều chỉnh kích thước khi thêm hoặc xóa phần tử.
+        - Chỉ lưu trữ các đối tượng: Đối với kiểu dữ liệu nguyên thủy (int, float,...), bạn phải sử dụng lớp bọc (wrapper class) như Integer, Double,...
+        - Chỉ số (Index): Các phần tử được lưu trữ với chỉ số bắt đầu từ 0.
+
+    - Khai báo `ArrayList`:
+
+      ```java
+      import java.util.ArrayList;
+      ArrayList<Type> list = new ArrayList<>();
+      ```
+
+2. **Các thao tác cơ bản với ArrayList**
+
+    - 2.1. Khởi tạo
+      - Tạo một ArrayList rỗng:
+
+        ```java
+        ArrayList<String> list = new ArrayList<>();
+        ```
+
+      - Tạo một ArrayList với kích thước ban đầu:
+
+        ```java
+        ArrayList<Integer> list = new ArrayList<>(10); // Kích thước ban đầu là 10
+        ```
+
+    - 2.2. Thêm phần tử
+      - Thêm vào cuối danh sách:
+
+        ```java
+        list.add("Java");
+        ```
+
+      - Thêm phần tử vào vị trí cụ thể:
+
+        ```java
+        list.add(1, "Python"); // Thêm "Python" vào chỉ số 1
+        ```
+
+    - 2.3. Truy cập phần tử
+      - Truy cập phần tử bằng chỉ số:
+
+        ```java
+        String value = list.get(0);
+        ```
+
+    - 2.4. Cập nhật phần tử
+      - Sửa giá trị của phần tử tại chỉ số:
+
+        ```java
+        list.set(0, "C++");
+        ```
+
+    - 2.5. Xóa phần tử
+      - Xóa phần tử theo chỉ số:
+
+        ```java
+        list.remove(0); // Xóa phần tử tại chỉ số 0
+        ```
+
+      - Xóa phần tử theo giá trị:
+
+        ```java
+        list.remove("Java");
+        ```
+
+    -  2.6. Kích thước của ArrayList
+        - Lấy kích thước:
+
+          ```java
+          int size = list.size();
+          ```
 
 
-> [!TIP]
-> 123
+    -  2.7. Duyệt qua ArrayList
+        - Dùng vòng lặp for:
+
+          ```java
+          for (int i = 0; i < list.size(); i++) {
+              System.out.println(list.get(i));
+          }
+          ```
+
+        - Dùng vòng lặp for-each:
+
+          ```java
+          for (String item : list) {
+              System.out.println(item);
+          }
+          ```
+
+        - Sử dụng Streams (Java 8+):
+
+          ```java
+          list.stream().forEach(System.out::println);
+          ```
+
+3. **Nâng Cao**
+
+    - 3.1. So sánh ArrayList với LinkedList
+
+        - Đặc điểm	ArrayList	LinkedList
+        - Bộ nhớ	Sử dụng một mảng động.	Sử dụng danh sách liên kết đôi.
+        - Truy cập phần tử	Nhanh (O(1)).	Chậm hơn (O(n)).
+        - Thêm/xóa ở giữa hoặc đầu	Chậm hơn (phải dời các phần tử).	Nhanh hơn.
+        - Ứng dụng	Thích hợp lưu trữ dữ liệu nhỏ, truy cập thường xuyên.	Thích hợp thêm/xóa dữ liệu thường xuyên.
+
+    - 3.2. Sắp xếp ArrayList
+
+        - Sắp xếp tăng dần:
+
+          ```java
+          import java.util.Collections;
+
+          Collections.sort(list);
+          ```
+
+        - Sắp xếp giảm dần:
+
+          ```java
+          Collections.sort(list, Collections.reverseOrder());
+          ```
+
+        - Sử dụng comparator tùy chỉnh:
+
+          ```java
+          list.sort((a, b) -> a.compareTo(b)); // Sắp xếp tăng dần
+          ```
+
+    - 3.3. Tìm kiếm trong ArrayList
+        - Tìm kiếm tuyến tính:
+
+          ```java
+          boolean exists = list.contains("Java");
+          ```
+
+        - Tìm kiếm nhị phân (dùng cho danh sách đã sắp xếp):
+
+          ```java
+          int index = Collections.binarySearch(list, "Java");
+          ```
+
+    - 3.4. Chuyển đổi ArrayList
+        - Chuyển từ ArrayList sang mảng:
+
+          ```java
+          String[] arr = list.toArray(new String[0]);
+          ```
+
+        - Chuyển từ mảng sang ArrayList:
+
+          ```java
+          String[] arr = {"Java", "Python"};
+          ArrayList<String> list = new ArrayList<>(Arrays.asList(arr));
+          ```
+
+    - 3.5. ArrayList trong lập trình đa luồng
+        - ArrayList không hỗ trợ thread-safe (an toàn cho đa luồng). Để sử dụng trong môi trường đa luồng, có thể chuyển đổi sang thread-safe:
+
+          ```java
+          List<String> syncList = Collections.synchronizedList(new ArrayList<>());
+          ```
+
+    - 3.6. ArrayList với Generics
+        - ArrayList sử dụng Generics để đảm bảo loại phần tử:
+
+          ```java
+          ArrayList<Integer> intList = new ArrayList<>();
+          intList.add(10);
+          intList.add(20);
+          ```
+
+    - 3.7. Hạn chế của ArrayList
+        - Không thread-safe: ArrayList không an toàn trong môi trường đa luồng.
+        - Hiệu suất thấp với thao tác thêm/xóa ở giữa danh sách: Do phải dời các phần tử khác.
+        - Không thể chứa kiểu dữ liệu nguyên thủy: Cần sử dụng các lớp bọc (wrapper class).
+
+
+4. Các lưu ý khi sử dụng ArrayList
+
+    - Sử dụng đúng loại dữ liệu với Generics:
+    - Tránh sử dụng ArrayList mà không chỉ định kiểu:
+
+      ```java
+      ArrayList list = new ArrayList(); // Không nên làm
+      ```
+
+    - Kiểm tra kích thước trước khi truy cập:
+
+      ```java
+      if (!list.isEmpty()) {
+          System.out.println(list.get(0));
+      }
+      ```
+
+    - Tránh thay đổi danh sách khi duyệt:
+    - Không nên thêm hoặc xóa phần tử khi đang duyệt qua danh sách (tránh lỗi ConcurrentModificationException).
+
+---
+
+© 2024 huynhkhuanit. All rights reserved.  
+For more information, visit [Github | huynhkhuanit](https://github.com/huynhkhuanit).

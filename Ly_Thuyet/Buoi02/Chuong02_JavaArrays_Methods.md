@@ -58,6 +58,30 @@ body {
 }
 </style>
 
+---
+
+MỤC LỤC:
+- [CHƯƠNG 2 - MẢNG (ARRAYS) TRONG JAVVA VÀ PHƯƠNG THỨC (METHODS) TRONG JAVA](#chương-2---mảng-arrays-trong-javva-và-phương-thức-methods-trong-java)
+  - [1. PHƯƠNG THỨC TRONG JAVA](#1-phương-thức-trong-java)
+    - [1.1. Cách khai báo và gọi phương thức](#11-cách-khai-báo-và-gọi-phương-thức)
+    - [1.2. Tham số trong phương thức](#12-tham-số-trong-phương-thức)
+  - [2. Các ví dụ về phương thức trong Java từ cơ bản đến nâng cao](#2-các-ví-dụ-về-phương-thức-trong-java-từ-cơ-bản-đến-nâng-cao)
+  - [3. Mảng (Array) trong Java](#3-mảng-array-trong-java)
+    - [3.1. Định nghĩa mảng trong Java](#31-định-nghĩa-mảng-trong-java)
+    - [3.2. Mảng 1 chiều (1D Arrays)](#32-mảng-1-chiều-1d-arrays)
+    - [3.3. Mảng 2 chiều (2D Arrays)](#33-mảng-2-chiều-2d-arrays)
+    - [3.4. Mảng động trong Java](#34-mảng-động-trong-java)
+    - [3.5. Các thao tác cơ bản với mảng](#35-các-thao-tác-cơ-bản-với-mảng)
+  - [4. ArrayList trong Java](#4-arraylist-trong-java)
+  - [🎉 **Hoàn Thành Chương 2!**](#-hoàn-thành-chương-2)
+  - [📌 **Những Điểm Mấu Chốt Cần Nhớ**](#-những-điểm-mấu-chốt-cần-nhớ)
+  - [🚀 **Bước Tiếp Theo**](#-bước-tiếp-theo)
+  - [📚 **Tài Nguyên Bổ Sung**](#-tài-nguyên-bổ-sung)
+  - [🎨 **Chia Sẻ Hành Trình Của Bạn**](#-chia-sẻ-hành-trình-của-bạn)
+  - [👏 **Chúc Mừng và Tiếp Tục Cố Gắng!**](#-chúc-mừng-và-tiếp-tục-cố-gắng)
+
+---
+
 # CHƯƠNG 2 - MẢNG (ARRAYS) TRONG JAVVA VÀ PHƯƠNG THỨC (METHODS) TRONG JAVA
 
 ## 1. PHƯƠNG THỨC TRONG JAVA

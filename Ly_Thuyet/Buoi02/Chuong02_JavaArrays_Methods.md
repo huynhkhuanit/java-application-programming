@@ -218,7 +218,7 @@ public void printDetails(String name, int age) {
   **5. Giảm độ phức tạp của mã (Code Simplification)**
     Thay vì viết một đoạn mã dài dòng trong main(), bạn có thể phân chia công việc thành các phương thức riêng lẻ, giúp chương trình dễ hiểu hơn.
 
-      - Ví dụ:
+    - Ví dụ:
 
       ```java
       public class Calculator {

@@ -188,7 +188,7 @@ public void printDetails(String name, int age) {
 
 - Phương thức (method) là một khối mã được định nghĩa để thực hiện một tác vụ cụ thể. Việc sử dụng phương thức mang lại nhiều lợi ích trong lập trình, đặc biệt là trong các ngôn ngữ hướng đối tượng như Java. Dưới đây là các mục đích chính của việc sử dụng phương thức:
 
-  1. **Tái sử dụng mã (Code Reusability)**
+  **1. Tái sử dụng mã (Code Reusability)**
     Phương thức cho phép bạn định nghĩa mã một lần và sử dụng lại nhiều lần trong chương trình, tránh việc viết lặp mã.
     Điều này giúp tiết kiệm thời gian và công sức, đồng thời làm cho chương trình dễ bảo trì hơn.
   - Ví dụ:
@@ -200,22 +200,22 @@ public void printDetails(String name, int age) {
     // Có thể gọi phương thức này nhiều lần thay vì viết lại mã.
     ```
 
-  2. **Tăng tính tổ chức (Modularity)**
+  **2. Tăng tính tổ chức (Modularity)**
     Phương thức giúp chia chương trình thành các phần nhỏ, dễ quản lý hơn.
     Mỗi phương thức có thể đảm nhận một tác vụ cụ thể, giúp mã nguồn rõ ràng, dễ đọc và dễ hiểu.
 
   - Ví dụ:
     - Một chương trình lớn có thể được chia thành các phương thức nhỏ như: `inputData()`, `processData()`, `displayResult()`.
 
-  3. **Tăng tính bảo trì (Maintainability)**
+  **3. Tăng tính bảo trì (Maintainability)**
     Nếu cần thay đổi logic của một tác vụ, bạn chỉ cần sửa đổi phương thức tương ứng, không cần thay đổi nhiều phần trong mã nguồn.
     Giảm nguy cơ lỗi khi bảo trì mã.
 
-  4. Hỗ trợ lập trình hướng đối tượng (OOP)
+  **4. Hỗ trợ lập trình hướng đối tượng (OOP)**
     Phương thức là một phần quan trọng của lập trình hướng đối tượng.
     Giúp các lớp (class) mô tả hành vi của đối tượng (object) thông qua các phương thức, làm tăng tính tương tác và mô phỏng thực tế.
 
-  5. Giảm độ phức tạp của mã (Code Simplification)
+  **5. Giảm độ phức tạp của mã (Code Simplification)**
     Thay vì viết một đoạn mã dài dòng trong main(), bạn có thể phân chia công việc thành các phương thức riêng lẻ, giúp chương trình dễ hiểu hơn.
 
       - Ví dụ:
@@ -231,11 +231,11 @@ public void printDetails(String name, int age) {
       }
       ```
 
-  6. Dễ dàng gỡ lỗi và kiểm thử (Debugging and Testing)
+  **6. Dễ dàng gỡ lỗi và kiểm thử (Debugging and Testing)**
     Phương thức giúp cô lập các đoạn mã có thể kiểm tra và gỡ lỗi độc lập, tăng hiệu quả khi xử lý lỗi.
     Việc viết Unit Test trở nên dễ dàng hơn khi kiểm thử từng phương thức riêng lẻ.
 
-  7. Tăng tính mở rộng (Extensibility)
+  **7. Tăng tính mở rộng (Extensibility)**
     Phương thức hỗ trợ dễ dàng mở rộng chương trình bằng cách thêm các phương thức mới mà không làm ảnh hưởng đến các phần khác.
       - Ví dụ:
         - Thêm một phương thức mới vào lớp `Calculator` để tính nhân hoặc chia mà không cần thay đổi phương thức `add` hoặc `subtract`.

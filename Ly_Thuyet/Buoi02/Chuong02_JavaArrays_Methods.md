@@ -877,7 +877,7 @@ public class VarargsExample {
 
     ```java
     int[][] matrix = new int[3][4];          // Mảng 3 hàng và 4 cột
-    int[][] matrix2 = {{1, 2}, {3, 4}};     // Mảng 2 hàng, 2 cột
+    int[][] matrix2 = { {1, 2}, {3, 4} };     // Mảng 2 hàng, 2 cột
     ```
 
 3. Duyệt mảng 2 chiều

@@ -59,8 +59,7 @@ body {
 </style>
 
 ---
-
-MỤC LỤC:
+# MỤC LỤC
 - [CHƯƠNG 2 - MẢNG (ARRAYS) TRONG JAVVA VÀ PHƯƠNG THỨC (METHODS) TRONG JAVA](#chương-2---mảng-arrays-trong-javva-và-phương-thức-methods-trong-java)
   - [1. PHƯƠNG THỨC TRONG JAVA](#1-phương-thức-trong-java)
     - [1.1. Cách khai báo và gọi phương thức](#11-cách-khai-báo-và-gọi-phương-thức)
@@ -1224,6 +1223,36 @@ Bạn đã sẵn sàng để chuyển sang **Chương 3: Lập Trình Hướng �
 ## 👏 **Chúc Mừng và Tiếp Tục Cố Gắng!**
 
 🎊 Bạn đã làm rất tốt trong việc hoàn thành chương này. Tiếp tục giữ vững tinh thần học tập và khám phá những kiến thức mới trong hành trình Java của bạn! 🌟
+
+<!-- Button to TOP CSS -->
+<style>
+.scroll-to-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 18px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: .25s;
+}
+
+.scroll-to-top:hover {
+  color: #007bff;
+  background-color: #fff;
+}
+</style>
+
+<!-- Nút Scroll to Top -->
+<a href="#mục-lục" class="scroll-to-top">⬆</a>
 
 ---
 

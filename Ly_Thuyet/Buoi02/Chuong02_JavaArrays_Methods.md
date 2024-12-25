@@ -255,3 +255,280 @@ public void printDetails(String name, int age) {
 ---
 
 **7. Những lưu ý đối với phương thức**
+
+1. **Đặt tên phương thức rõ ràng và ngắn gọn**
+
+    - Tên phương thức cần biểu thị chính xác mục đích của nó.
+    - Sử dụng camelCase khi đặt tên phương thức.
+    - Tránh sử dụng các từ viết tắt hoặc tên khó hiểu.
+
+    - Ví dụ:
+
+      ```java
+      public void calculateSum();  // Tên tốt, mô tả rõ ràng.
+      public void cs();            // Tên xấu, khó hiểu.
+      ```
+2. **Tham số của phương thức (Parameters)**
+
+    - Cần đặt tên tham số rõ ràng để mô tả chức năng của chúng.
+    - Số lượng tham số nên hạn chế, tránh sử dụng quá nhiều tham số (thông thường không quá 4-5 tham số).
+    - Nếu cần truyền nhiều tham số, hãy cân nhắc sử dụng Object hoặc Class.
+
+    - Ví dụ:
+
+      ```java
+      public void displayInfo(String name, int age, String address);  // Nhiều tham số, dễ gây nhầm lẫn.
+      ```
+
+    - Giải pháp:
+
+      ```java
+      public class Person {
+          String name;
+          int age;
+          String address;
+      }
+      public void displayInfo(Person person);  // Truyền đối tượng, rõ ràng hơn.
+      ```
+
+3. **Tránh viết phương thức quá dài**
+
+    - Phương thức nên thực hiện một nhiệm vụ duy nhất.
+    - Phương thức dài dòng sẽ khó đọc, khó gỡ lỗi và khó kiểm tra.
+    - Nếu một phương thức dài hơn 20-30 dòng, hãy cân nhắc chia nhỏ nó thành các phương thức con.
+
+    - Ví dụ xấu:
+
+      ```java
+      public void process() {
+          // Hàng trăm dòng mã.
+      }
+      ```
+
+    - Giải pháp:
+
+      ```java
+      public void process() {
+          validateInput();
+          calculateResult();
+          displayOutput();
+      }
+      ```
+
+4. **Tránh lạm dụng phương thức tĩnh (Static Methods)**
+
+    - Phương thức tĩnh không cần đối tượng để gọi, nhưng nó không thể truy cập trực tiếp vào các thành viên không tĩnh (non-static) của lớp.
+    - Sử dụng static khi phương thức không phụ thuộc vào trạng thái của đối tượng.
+
+    - Ví dụ:
+
+      ```java
+      public static int calculateSum(int a, int b) {
+          return a + b;  // Tốt khi không liên quan đến thuộc tính của lớp.
+      }
+      ```
+
+5. **Overloading và Overriding**
+
+    - Overloading (Quá tải): Phương thức có cùng tên nhưng khác nhau về số lượng hoặc kiểu tham số. Được sử dụng để thực hiện cùng một hành vi với dữ liệu khác nhau.
+    - Overriding (Ghi đè): Ghi đè một phương thức của lớp cha trong lớp con để thay đổi hành vi.
+
+    - Lưu ý:
+
+      - Với `Overriding`, phương thức ghi đè phải có:
+      - Cùng tên, cùng tham số, cùng kiểu trả về.
+      - Không được hạ thấp phạm vi truy cập.
+      - Với `Overloading`, các phương thức phải có:
+      - Cùng tên nhưng khác tham số (số lượng hoặc kiểu).
+
+      ```java
+      // Overloading
+      public int calculate(int a, int b) { return a + b; }
+      public double calculate(double a, double b) { return a + b; }
+
+      // Overriding
+      @Override
+      public void display() {
+          System.out.println("This is the overridden method.");
+      }
+      ```
+
+6. **Giá trị trả về (Return Value)**
+
+    - Xác định rõ kiểu dữ liệu trả về (int, String, void, v.v.).
+    - Nếu không có giá trị trả về, sử dụng void.
+    - Kiểm tra kỹ trường hợp giá trị trả về bị thiếu hoặc không khớp.
+
+    ```java
+    public int calculateSum(int a, int b) {
+        return a + b;  // Phải đảm bảo trả về giá trị.
+    }
+    ```
+
+7. **Phạm vi truy cập (Access Modifier)**
+
+    - Quyết định mức độ truy cập vào phương thức:
+      - `public`: Phương thức có thể truy cập từ bất kỳ đâu.
+      - `protected`: Truy cập từ các lớp cùng gói hoặc lớp con.
+      - `default` (không khai báo): Truy cập từ các lớp trong cùng gói.
+      - `private`: Chỉ truy cập trong cùng lớp.
+
+---
+
+### 1.2. Tham số trong phương thức
+
+1. **Tham số trong phương thức là gì?**
+
+    - Tham số trong phương thức (Method Parameters) là các biến được khai báo trong dấu ngoặc tròn của định nghĩa phương thức. Tham số cho phép truyền dữ liệu từ bên ngoài vào phương thức để sử dụng trong các thao tác bên trong phương thức.
+    
+    - Ví dụ:
+
+      ```java
+      public class Example {
+          public void greet(String name) { // Tham số name
+              System.out.println("Hello, " + name + "!");
+          }
+
+          public static void main(String[] args) {
+              Example example = new Example();
+              example.greet("Alice"); // Truyền giá trị "Alice" cho tham số name
+          }
+      }
+      ```
+    - Trong ví dụ này, `name` là tham số của phương thức `greet`, cho phép chương trình nhận dữ liệu (tên) khi gọi phương thức.
+
+2. **Có mấy cách truyền phương thức trong Java**
+
+    - Java hỗ trợ hai cách truyền tham số chính:
+      - **Truyền tham trị (Pass by Value)**.
+      - **Truyền tham chiếu (Pass by Reference - thông qua các tham chiếu đối tượng)**.
+
+    1. **Truyền tham trị (Pass by Value)**
+        - Java sử dụng truyền tham trị cho tất cả các tham số.
+        - Khi truyền tham số, giá trị của biến được sao chép và truyền vào phương thức. Bất kỳ thay đổi nào đối với tham số bên trong phương thức không ảnh hưởng đến biến gốc bên ngoài.
+    
+          ```java
+          public class PassByValue {
+              public void modifyValue(int num) {
+                  num = 100; // Thay đổi giá trị tham số
+              }
+
+              public static void main(String[] args) {
+                  int value = 50;
+                  PassByValue example = new PassByValue();
+                  example.modifyValue(value);
+                  System.out.println("Value after method call: " + value); // Kết quả: 50
+              }
+          }
+          ```
+
+        - Giải thích:
+          - Giá trị của `value` được sao chép vào tham số `num`.
+          - Thay đổi num trong phương thức không ảnh hưởng đến giá trị của `value`.
+
+      2. **Truyền tham chiếu (Pass by Reference)**
+
+          - `Java` không thực sự hỗ trợ truyền tham chiếu cho các kiểu nguyên thủy.
+          - Đối với đối tượng, `Java` truyền tham chiếu đến đối tượng (`reference to object`) vào phương thức. Điều này có nghĩa là nếu bạn thay đổi thuộc tính của đối tượng, thay đổi này sẽ ảnh hưởng đến đối tượng gốc.
+
+          - Ví dụ:
+
+            ```java
+            public class PassByReference {
+                public void modifyObject(Person person) {
+                    person.name = "Updated Name"; // Thay đổi thuộc tính của đối tượng
+                }
+
+                public static void main(String[] args) {
+                    Person person = new Person("Original Name");
+                    PassByReference example = new PassByReference();
+                    example.modifyObject(person);
+                    System.out.println("Person name after method call: " + person.name); // Kết quả: Updated Name
+                }
+            }
+
+            class Person {
+                String name;
+                Person(String name) {
+                    this.name = name;
+                }
+            }
+            ```
+
+          - Giải thích:
+            - Tham chiếu đến đối tượng person được truyền vào phương thức.
+            - Khi thay đổi thuộc tính của đối tượng trong phương thức, thay đổi này được phản ánh trên đối tượng gốc.
+
+3. S**ự khác biệt giữa Pass by Value và Pass by Reference**
+
+| **Đặc điểm**                | **Pass by Value**                                  | **Pass by Reference**                               |
+|-----------------------------|----------------------------------------------------|-----------------------------------------------------|
+| **Kiểu dữ liệu áp dụng**    | Kiểu nguyên thủy (primitive types).                | Đối tượng (object types).                           |
+| **Truyền gì?**              | Giá trị của biến được sao chép.                    | Tham chiếu đến đối tượng trong bộ nhớ.              |
+| **Ảnh hưởng đến biến gốc?** | Không, giá trị gốc không thay đổi.                 | Có, thay đổi thuộc tính của đối tượng sẽ ảnh hưởng. |
+| **Thay đổi biến?**          | Không thể thay đổi biến gốc bên ngoài phương thức. | Có thể thay đổi trạng thái của đối tượng.           |
+
+4. **Một số lưu ý quan trọng**
+    - **Java luôn truyền tham trị (pass by value).**
+      - Ngay cả khi làm việc với đối tượng, giá trị tham chiếu của đối tượng được sao chép, không phải chính đối tượng.
+    - **Không thể truyền kiểu nguyên thủy bằng tham chiếu.**
+      - Nếu muốn thay đổi giá trị của kiểu nguyên thủy bên ngoài phương thức, bạn cần gói chúng trong một đối tượng (wrapper).
+    - **Thay đổi giá trị đối tượng.**
+      - Thay đổi thuộc tính của đối tượng là hành vi thường gặp khi làm việc với tham chiếu. Tuy nhiên, không thể thay đổi tham chiếu của biến đối tượng bên ngoài phương thức.
+    - **Cẩn thận với trạng thái đối tượng.**
+      - Khi sử dụng tham chiếu, thay đổi trong một phương thức có thể gây lỗi không mong muốn nếu không kiểm soát trạng thái của đối tượng.
+
+5. Ví dụ thực tế về việc truyền tham số trong phương thức
+
+Hoán đổi giá trị trong Java (sử dụng mảng)
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void swap(int[] arr) {
+        int tmp = arr[0];
+        arr[0] = arr[1];
+        arr[1] = tmp;
+    }
+    
+    public static void main(String[] args) {
+        int[] values = {3, 5};
+        System.out.println("Before swap: a = " + values[0] + ", b = " + values[1]);
+        swap(values);
+        System.out.println("After swap: a = " + values[0] + ", b = " + values[1]);
+    }
+}
+```
+
+Hoán đổi giá trị trong Java (sử dụng đối tượng)
+
+```java
+import java.util.Scanner;
+
+class Pair {
+    int a, b;
+    
+    Pair(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+}
+
+public class Main {
+    public static void swap(Pair pair) {
+        int tmp = pair.a;
+        pair.a = pair.b;
+        pair.b = tmp;
+    }
+    
+    public static void main(String[] args) {
+        Pair pair = new Pair(3, 5);
+        System.out.println("Before swap: a = " + pair.a + ", b = " + pair.b);
+        swap(pair);
+        System.out.println("After swap: a = " + pair.a + ", b = " + pair.b);
+    }
+}
+```
+
+- Đối với ngôn ngữ `Java`, việc truyền các tham số vào trong phương phức luôn là `pass by value`. Cho nên việc thay đổi giá trị trong Java chỉ dược thực hiện thông qua `mảng` hoặc `đối tượng`, hoặc `wrapper class`.

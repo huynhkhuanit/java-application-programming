@@ -248,4 +248,6 @@ public void printDetails(String name, int age) {
   Tận dụng Overloading: Sử dụng phương thức quá tải (method overloading) để thực hiện nhiều nhiệm vụ tương tự nhưng với tham số khác nhau.
   Sử dụng static hợp lý: Phương thức tĩnh (static) chỉ nên dùng khi hành vi không liên quan đến đối tượng cụ thể.
 
+---
 
+**7. Những lưu ý đối với phương thức**

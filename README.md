@@ -46,9 +46,11 @@ Kho tài liệu này chứa một chuỗi bài học có hệ thống về lập
 ---
 
 
-### 2. [Buổi 02: Lập Trình Hướng Đối Tượng (OOP)](LyThuyet/Buoi-02/OOPBasics.md)
-   - Tìm hiểu về lớp, đối tượng và phương thức.
-   - Thành thạo các nguyên lý của OOP: Đóng gói (Encapsulation), Kế thừa (Inheritance), Đa hình (Polymorphism), Trẫn trụng (Abstraction).
+### 2. [Buổi 02: MẢNG VÀ PHƯƠNG THỨC TRONG JAVA](./Ly_Thuyet/Buoi02/Chuong02_JavaArrays_Methods.md)
+   - Tìm hiểu về phương thức (Method) trong Java.
+   - Tìm hiểu về mảng (array) trong Java.
+   - Đang thực hiện bởi: **[🧑‍💻 huynhkhuanit](https://github.com/huynhkhuanit)**
+   - **Vui lòng chờ đợi... (loading... 🔃)**
 
 ### 3. [Buổi 03: Mảng và Các Cấu Trúc Dữ Liệu](LyThuyet/Buoi-03/ArraysAndCollections.md)
    - Học cách làm việc với mảng, ArrayLists và HashMaps.

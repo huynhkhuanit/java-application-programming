@@ -7,6 +7,10 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
+
+body {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
 </style>
 
 # CHƯƠNG 2 - MẢNG (ARRAYS) TRONG JAVVA VÀ PHƯƠNG THỨC (METHODS) TRONG JAVA

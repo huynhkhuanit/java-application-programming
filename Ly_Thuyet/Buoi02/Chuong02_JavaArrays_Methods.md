@@ -532,3 +532,11 @@ public class Main {
 ```
 
 - Đối với ngôn ngữ `Java`, việc truyền các tham số vào trong phương phức luôn là `pass by value`. Cho nên việc thay đổi giá trị trong Java chỉ dược thực hiện thông qua `mảng` hoặc `đối tượng`, hoặc `wrapper class`.
+- Đối với phương thức `Constructor` và `Destructor` thì tên phương thức phải trùng với tên lớp (`class`).
+
+> [!NOTE]
+> 123
+
+
+> [!TIP]
+> 123

@@ -85,7 +85,7 @@ Kho tài liệu này chứa một chuỗi bài học có hệ thống về lập
 ---
 
 
-   - 📝 **Bài tập về phương thức:  [👉 Open link](./Ly_Thuyet/Buoi02/bai_tap/functions_methods/)**
+   - 📝 **Bài tập về phương thức:  [👉 Open link](./Ly_Thuyet/Buoi02/bai_tap/functions_methods.md)**
    - 📝 **Bài tập về mảngs:  Đang thực hiện... 🔃**
 
 

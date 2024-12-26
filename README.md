@@ -47,10 +47,50 @@ Kho tài liệu này chứa một chuỗi bài học có hệ thống về lập
 
 
 ### 2. [Buổi 02: MẢNG VÀ PHƯƠNG THỨC TRONG JAVA](./Ly_Thuyet/Buoi02/Chuong02_JavaArrays_Methods.md)
-   - Tìm hiểu về phương thức (Method) trong Java.
-   - Tìm hiểu về mảng (array) trong Java.
-   - Đang thực hiện bởi: **[🧑‍💻 huynhkhuanit](https://github.com/huynhkhuanit)**
-   - **Vui lòng chờ đợi... (loading... 🔃)**
+
+   - **Tìm hiểu về phương thức (Method) trong Java.**
+      - **Nội dung chính:**
+         - **Khai báo và gọi phương thức:**
+            - Các từ khóa: static, void, kiểu trả về, và tham số.
+            - Phân biệt giữa phương thức không trả về giá trị và phương thức có trả về giá trị.
+         - **Các cách truyền tham số:**
+            - Tham trị (`pass by value`).
+            - Tham chiếu (`pass by reference`).
+         - **Tính chất và mục đích:**
+            - Tái sử dụng mã nguồn.
+            - Giảm thiểu sự lặp lại trong chương trình.
+         - **Ứng dụng thực tế:**
+            - Xây dựng các phương thức tính toán, xử lý dữ liệu.
+            - Tạo các phương thức hỗ trợ như `swap`, `findMax`, `findMin`, v.v.
+   - **Tìm hiểu về mảng (array) trong Java.**
+      - **Định nghĩa:**
+         - Mảng là một cấu trúc dữ liệu lưu trữ nhiều phần tử có cùng kiểu dữ liệu tại các vị trí liền kề trong bộ nhớ.
+      - **Nội dung chính:**
+         - **Mảng 1 chiều (1D Arrays):**
+            - Khai báo, khởi tạo, và duyệt mảng.
+            - Các thao tác cơ bản: thêm, sửa, xóa phần tử.
+         - **Mảng 2 chiều (2D Arrays):**
+            - Lưu trữ dữ liệu dạng bảng.
+            - Duyệt mảng bằng vòng lặp lồng nhau.
+         - **Mảng động (ArrayList, Vector):**
+            - So sánh với mảng tĩnh.
+            - Tính năng thêm/xóa linh hoạt.
+            - Cách sử dụng lớp ArrayList từ thư viện `java.util`.
+         - **Các thao tác phổ biến**
+            - Duyệt mảng (`traversal`).
+            - Tìm kiếm (`search`).
+            - Sắp xếp (`sort`).
+            - Tính toán như `tổng`, `trung bình`, `giá trị lớn nhất/nhỏ nhất`.
+
+---
+
+
+   - 📝 **Bài tập về phương thức:  [👉 Open link](./Ly_Thuyet/Buoi02/bai_tap/functions_methods/)**
+   - 📝 **Bài tập về mảngs:  Đang thực hiện... 🔃**
+
+
+---
+
 
 ### 3. [Buổi 03: Mảng và Các Cấu Trúc Dữ Liệu](LyThuyet/Buoi-03/ArraysAndCollections.md)
    - Học cách làm việc với mảng, ArrayLists và HashMaps.

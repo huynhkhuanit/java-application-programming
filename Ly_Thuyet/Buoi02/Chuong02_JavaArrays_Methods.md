@@ -1220,6 +1220,15 @@ Bạn đã sẵn sàng để chuyển sang **Chương 3: Lập Trình Hướng �
 
 ---
 
+## 🎽 **Bài tập về chương 02**
+
+💡 Bài tập về chương 02 bao gồm phương thức và mảng, cách áp dụng các phương thức và gọi nó.
+- Lưu ý:
+  - Các phương thức chưa cần khai báo non-static để gọi từ đối tượng cụ thể, thường sử dụng khi gắn liền vào đối tượng.
+  - Đối với ngôn ngữ C++ phần học này được xem như học về hàm (function) hơn là học về phương thức hơn nghiêng về OOP.
+
+---
+
 ## 👏 **Chúc Mừng và Tiếp Tục Cố Gắng!**
 
 🎊 Bạn đã làm rất tốt trong việc hoàn thành chương này. Tiếp tục giữ vững tinh thần học tập và khám phá những kiến thức mới trong hành trình Java của bạn! 🌟

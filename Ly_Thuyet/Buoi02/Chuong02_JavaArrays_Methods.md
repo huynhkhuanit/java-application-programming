@@ -1225,7 +1225,7 @@ Bạn đã sẵn sàng để chuyển sang **Chương 3: Lập Trình Hướng �
 💡 Bài tập về chương 02 bao gồm phương thức và mảng, cách áp dụng các phương thức và gọi nó.
 - Lưu ý:
   - Các phương thức chưa cần khai báo non-static để gọi từ đối tượng cụ thể, thường sử dụng khi gắn liền vào đối tượng.
-  - Đối với ngôn ngữ C++ phần học này được xem như học về hàm (function) hơn là học về phương thức hơn nghiêng về OOP.
+  - Đối với ngôn ngữ C++ phần học này được xem như học về hàm (function) hơn là học về phương thức hơn nghiêng về OOP.ư
 
 ---
 

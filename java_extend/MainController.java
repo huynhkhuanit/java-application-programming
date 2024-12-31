@@ -11,6 +11,9 @@ public class MainController {
     private Button myButton;
 
     @FXML
+    private Button button2;
+
+    @FXML
     private TextArea myTextField;
 
     @FXML
@@ -23,6 +26,14 @@ public class MainController {
         alert.setTitle("Thông Báo");
         alert.setHeaderText("Bạn đã nhập:");
         alert.setContentText(userInput);
+        alert.showAndWait();
+    }
+
+    @FXML
+    private void handleButtonClick2() {
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Thông Báo");
+        alert.setContentText("Ban click nut 2");
         alert.showAndWait();
     }
 }

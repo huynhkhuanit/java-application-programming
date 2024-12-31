@@ -1,11 +1,5 @@
 package java_extend;
 
-import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.chart.PieChart;
-import javafx.scene.layout.StackPane;
-import javafx.stage.Stage;
-
 public class PieChartApp extends Application {
     @Override
     public void start(Stage primaryStage) {
@@ -14,8 +8,7 @@ public class PieChartApp extends Application {
                 new PieChart.Data("Java", 40),
                 new PieChart.Data("Python", 30),
                 new PieChart.Data("C++", 20),
-                new PieChart.Data("Others", 10)
-        );
+                new PieChart.Data("Others", 10));
 
         StackPane layout = new StackPane(pieChart);
         Scene scene = new Scene(layout, 400, 400);

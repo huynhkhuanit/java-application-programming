@@ -1,6 +1,5 @@
+// Tìm Phần Tử Lớn Nhất và Nhỏ Nhất
 package Ly_Thuyet.Buoi02.bai_tap.arrays;
-
-import javafx.util.Pair;
 
 public class bai_02 {
     public static Pair<Integer, Integer> findMinMax(int[] arr) {

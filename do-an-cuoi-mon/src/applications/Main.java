@@ -4,19 +4,30 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
-import javafx.scene.image.Image; // Import Images
 
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/src/view/Main.fxml"));
-        primaryStage.setTitle("Đồ Án Cuối Môn - Lập Trình Java");
-        primaryStage.setScene(new Scene(root));
-        primaryStage.show();
+        // Load FXML
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/src/view/Main.fxml"));
 
-        // Application icon
-        primaryStage.getIcons().add(new Image("/src/assets/img/student-management-icon.png"));
+        // root -> Nhánh chính gọi load
+        Parent root = loader.load();
+
+        // Title
+        primaryStage.setTitle("Đồ Án Cuối Môn - Lập Trình Java");
+
+        // Icon
+        primaryStage.getIcons()
+                .add(new Image(getClass().getResource("/src/assets/img/student-management-icon.png").toExternalForm()));
+
+        // Tạo Scene
+        primaryStage.setScene(new Scene(root));
+
+        // Show Stage
+        primaryStage.show();
     }
 
     public static void main(String[] args) {

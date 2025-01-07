@@ -1,0 +1,72 @@
+Tổ chức dự án (cấu trúc thư mục):
+	diagrams/
+	src/
+		applications/
+			Login.java
+			SinUp.java
+			Main.java
+		assets/
+			css/
+			img/
+			fonts/
+		controller/
+			LoginController.java
+			SignUpController.java
+			MainController.java
+		model/
+		repository/
+		service/
+		util/
+		view/
+			Main.fxml
+			login.fxml
+			signup.fxml
+
+	presentation/
+	word/
+
+---
+
+applications/
+	Main.java
+
+	= Tổng Quan =
+		- Chứa giao diện chính của đồ án, sử dụng thư viện javaFX.
+		- Sử dụng phần mềm hỗ trợ tạo giao diện của Gluon [Scene Builder].
+
+---
+
+controller/
+	MainController.java
+
+	= Tổng quan =
+		 - Sử dụng để quản lý và xử lý các sự kiện logic liên quan đến giao diện người dùng (UI).
+		 - Đây là phần tách biệt giao diện FXML khỏi logic xử lý.
+
+	= Vai trò =
+		- Một phần mềm được tạo nên bởi (UI - User Interface) và (UX - User Experience). Tức là phần giao diện và phần tương tác.
+		- FXML là phần được xem là giao diện (layout, button, text, lable...)
+		- Controller là phần xử lý các logic thao tác (tương tác) giữa người dùng với giao diện -> Nâng cấp trải nghiệm người dùng.
+
+	= Định nghĩa =
+		- Controller chứa các logic xử lý tương tác cụ thể nhất của giao diện. Ví dụ:
+			+ Gắn các sự kiện (OnAction) cho các nút.
+				-> Các sự kiện (event) được gán thủ công qua [Scene Builder] hoặc trong file FXML với thuộc tính (property) là [OnAction = "#Example"]
+				-> Có thể gán qua code với [lamda expression] với [initialize()].
+					Lấy fx:id để gọi phương thức setOnAction(event -> phương thức xử lý click())
+			+ Các cách gán đều có ưu / nhược điểm riêng tuỳ vào phạm vi của ứng dụng.
+
+	= Các thuộc tính =
+		@FXML
+    	private Button signUpButton;
+
+    	@FXML
+    	private Button loginButton;
+
+    	@FXML
+	    public void initialize() {
+	        loginButton.setOnAction(event -> showLoginModal());
+	        signUpButton.setOnAction(event -> showSignupModal());
+	    }
+
+	    

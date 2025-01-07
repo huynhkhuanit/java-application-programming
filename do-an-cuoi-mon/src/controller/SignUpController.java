@@ -1,72 +1,63 @@
 package src.controller;
 
-import javafx.animation.FadeTransition;
-import javafx.animation.ScaleTransition;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.util.Duration;
 
 public class SignUpController {
+
+    // Khai báo thuộc tính
     @FXML
-    private TextField fullNameField;
+    private TextField usernameField;
+
     @FXML
     private TextField emailField;
+
     @FXML
     private PasswordField passwordField;
+
     @FXML
     private PasswordField confirmPasswordField;
+
     @FXML
     private Button signUpButton;
 
     @FXML
-    private Label descriptionLabel;
+    private Button loginButton;
 
     @FXML
     public void initialize() {
-        applyFadeEffect(descriptionLabel);
-        applyScaleEffect(descriptionLabel);
+        // Gắn sự kiện cho nút ĐĂNG KÝ
+        signUpButton.setOnAction(event -> handleSignUp());
+        // Gắn sự kiện cho nút ĐĂNG NHẬP
+        loginButton.setOnAction(event -> handleLogin());
     }
 
-    private void applyFadeEffect(Node node) {
-        FadeTransition fade = new FadeTransition();
-        fade.setDuration(Duration.millis(2000));
-        fade.setFromValue(0.0);
-        fade.setToValue(1.0);
-        fade.setNode(node);
-        fade.play();
-    }
-
-    private void applyScaleEffect(Node node) {
-        ScaleTransition scale = new ScaleTransition(Duration.millis(500), node);
-        scale.setFromX(1.0);
-        scale.setFromY(1.0);
-        scale.setToX(1.2);
-        scale.setToY(1.2);
-
-        node.setOnMouseEntered(event -> scale.playFromStart());
-        node.setOnMouseExited(event -> {
-            scale.setRate(-1);
-            scale.play();
-        });
-    }
-
-    @FXML
-    private void handleSignUpButtonClick() {
-        String fullName = fullNameField.getText();
+    // Click đăng ký
+    private void handleSignUp() {
+        String username = usernameField.getText();
         String email = emailField.getText();
         String password = passwordField.getText();
         String confirmPassword = confirmPasswordField.getText();
 
-        if (!password.equals(confirmPassword)) {
-            System.out.println("Passwords do not match!");
+        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+            System.out.println("Vui lòng điền đầy đủ thông tin!");
             return;
         }
 
-        System.out.println("User Signed Up Successfully!");
-        System.out.println("Name: " + fullName + ", Email: " + email);
+        if (!password.equals(confirmPassword)) {
+            System.out.println("Mật khẩu không khớp!");
+            return;
+        }
+
+        System.out.println("Đăng ký thành công!");
+        System.out.println("Họ tên: " + username + ", Email: " + email);
+    }
+
+    // Click đăng nhập -> Chưa xử lý chuyển hướng
+    private void handleLogin() {
+        System.out.println("Chuyển sang giao diện ĐĂNG NHẬP!");
+        // Thêm logic để chuyển giao diện tại đây
     }
 }

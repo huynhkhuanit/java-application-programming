@@ -7,12 +7,12 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-public class SignUp extends Application {
+public class Login extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
             // Load FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/src/view/signup.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/src/view/login.fxml"));
             Parent root = loader.load();
 
             // Tạo Scene từ root
@@ -22,11 +22,9 @@ public class SignUp extends Application {
             primaryStage.getIcons()
                     .add(new Image(getClass().getResource("/src/assets/img/student-management-icon.png").toExternalForm()));
 
-            // Gắn stylesheet
-            scene.getStylesheets().add(getClass().getResource("/src/assets/css/SignUp.css").toExternalForm());
 
             // Thiết lập tiêu đề và cảnh của Stage
-            primaryStage.setTitle("Sign Up - JavaFX Application");
+            primaryStage.setTitle("ĐĂNG NHẬP");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception e) {

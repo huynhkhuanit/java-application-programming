@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="420.0" prefWidth="800.0" stylesheets="@../assets/css/SignUp.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.controller.LoginController">
+   <top>
+      <VBox alignment="CENTER" prefHeight="63.0" prefWidth="816.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="918.0" styleClass="main-title" stylesheets="@../assets/css/SignUp.css" text="GIAO DIỆN ĐĂNG NHẬP" textAlignment="CENTER" />
+         </children>
+      </VBox>
+   </top>
+   <right>
+      <VBox alignment="CENTER" prefHeight="360.0" prefWidth="353.0" spacing="20" style="-fx-background-color: #04aa6d; -fx-padding: 20;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" prefHeight="35.0" prefWidth="334.0" style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;" text="NÀY, KHOAN ĐÃ..." textAlignment="CENTER" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/student-management-icon.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" prefHeight="25.0" prefWidth="343.0" style="-fx-text-fill: white; -fx-font-size: 16px;" text="Nếu bạn chưa có tài khoản, hãy đăng ký" textAlignment="CENTER" />
+            <Button fx:id="signUpButton" maxWidth="Infinity" prefHeight="93.0" prefWidth="313.0" styleClass="SignInBtn" text="ĐĂNG KÝ" />
+         </children>
+      </VBox>
+   </right>
+   <center>
+      <VBox alignment="CENTER" prefHeight="358.0" prefWidth="461.0" spacing="20" style="-fx-padding: 20;" BorderPane.alignment="CENTER">
+         <children>
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="ĐĂNG NHẬP TÀI KHOẢN" />
+            <TextField fx:id="emailField" promptText="Email" style="-fx-padding: 10;" />
+            <PasswordField fx:id="passwordField" promptText="Mật khẩu" style="-fx-padding: 10;" />
+            <Button fx:id="loginButton" maxWidth="Infinity" prefHeight="13.0" prefWidth="423.0" styleClass="SignUpBtn" text="ĐĂNG NHẬP" />
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

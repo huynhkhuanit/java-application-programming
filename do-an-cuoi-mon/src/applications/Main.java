@@ -6,25 +6,27 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import src.util.GlobalVariables;
 
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         // Load FXML
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/src/view/Main.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(GlobalVariables.BASE_FXML_PATH + GlobalVariables.APP_NAME_MAIN));
 
         // root -> Nhánh chính gọi load
         Parent root = loader.load();
+        Scene scene = new Scene(root);
 
         // Title
-        primaryStage.setTitle("Đồ Án Cuối Môn - Lập Trình Java");
+        primaryStage.setTitle(GlobalVariables.APP_NAME);
 
         // Icon
         primaryStage.getIcons()
-                .add(new Image(getClass().getResource("/src/assets/img/student-management-icon.png").toExternalForm()));
+                .add(new Image(getClass().getResource(GlobalVariables.BASE_IMAGE_PATH + "student-management-icon.png").toExternalForm()));        
 
         // Tạo Scene
-        primaryStage.setScene(new Scene(root));
+        primaryStage.setScene(scene);
 
         // Show Stage
         primaryStage.show();

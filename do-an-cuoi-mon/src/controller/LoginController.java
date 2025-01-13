@@ -2,19 +2,32 @@ package src.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
+
+import java.awt.Toolkit;
+
+// Common class
+import src.util.*;
 
 public class LoginController {
 
-    // Khai báo thuộc tính
+    // Thuộc tính kết nối với FXML
     @FXML
     private TextField emailField;
 
     @FXML
     private PasswordField passwordField;
+
+    @FXML
+    private TextField visiblePasswordField;
+
+    @FXML
+    private Button togglePasswordButton;
 
     @FXML
     private Button loginButton;
@@ -23,9 +36,37 @@ public class LoginController {
     private Button signUpButton;
 
     @FXML
+    private Label capsLockWarning; // Label hiển thị thông báo Caps Lock
+
+    // Kiểm tra Caps Lock
+    private boolean isCapsLockOn;
+
+    // Trạng thái ẩn hiện password.
+    private boolean isPasswordVisible = false;
+
+    @FXML
     public void initialize() {
+        // Kiểm tra trạng thái Caps Lock khi khởi động
+        isCapsLockOn = Toolkit.getDefaultToolkit().getLockingKeyState(java.awt.event.KeyEvent.VK_CAPS_LOCK);
+        capsLockWarning.setVisible(isCapsLockOn);
+
+        // Gắn sự kiện cho các nút
         loginButton.setOnAction(event -> handleLogin());
         signUpButton.setOnAction(event -> handleSignUp());
+
+        // Lắng nghe sự kiện trên passwordField
+        passwordField.setOnKeyReleased(this::checkCapsLock);
+        passwordField.setOnMouseClicked(event -> {
+            // Kiểm tra lại Caps Lock khi passwordField được nhấn vào
+            isCapsLockOn = Toolkit.getDefaultToolkit().getLockingKeyState(java.awt.event.KeyEvent.VK_CAPS_LOCK);
+            capsLockWarning.setVisible(isCapsLockOn);
+        });
+
+        // Password visible
+        passwordField.textProperty().addListener((obs, oldText, newText) -> visiblePasswordField.setText(newText));
+        visiblePasswordField.textProperty().addListener((obs, oldText, newText) -> passwordField.setText(newText));
+
+        togglePasswordButton.setOnAction(event -> togglePasswordVisibility());
     }
 
     /**
@@ -36,19 +77,19 @@ public class LoginController {
         String password = passwordField.getText();
 
         if (email.isEmpty() || password.isEmpty()) {
-            showAlert(AlertType.ERROR, "Lỗi đăng nhập", "Vui lòng nhập đầy đủ email và mật khẩu!");
+            NotificationUtils.showWarning("Lỗi đăng nhập", "Vui lòng nhập đầy đủ email và mật khẩu!");
             return;
         }
 
         if (!isValidEmail(email)) {
-            showAlert(AlertType.ERROR, "Lỗi đăng nhập", "Định dạng email không hợp lệ!");
+            NotificationUtils.showWarning("Lỗi đăng nhập", "Định dạng email không hợp lệ!");
             return;
         }
 
-        if (email.equals("user@example.com") && password.equals("password")) {
-            showAlert(AlertType.INFORMATION, "Đăng nhập thành công", "Chào mừng bạn quay lại!");
+        if (email.equals(GlobalVariables.DEFAULT_EMAIL) && password.equals(GlobalVariables.DEFAULT_PASSWORD)) {
+            NotificationUtils.showInfo("Đăng nhập thành công", "Chào mừng bạn quay lại!");
         } else {
-            showAlert(AlertType.ERROR, "Lỗi đăng nhập", "Email hoặc mật khẩu không đúng!");
+            NotificationUtils.showError("Đăng nhập không thành không", "Email hoặc mật khẩu không đúng!");
         }
     }
 
@@ -56,34 +97,39 @@ public class LoginController {
      * Xử lý sự kiện khi nhấn nút Sign Up
      */
     private void handleSignUp() {
-        // Điều hướng tới giao diện đăng ký (nếu có)
-        System.out.println("Điều hướng tới giao diện đăng ký...");
+        Stage currentStage = (Stage) signUpButton.getScene().getWindow();
+        loadwindowsUtils.loadWindow(GlobalVariables.BASE_FXML_PATH + GlobalVariables.APP_NAME_SIGNUP, GlobalVariables.SIGNUP_NAME,
+                currentStage);
     }
 
     /**
-     * Hiển thị thông báo (Alert)
-     *
-     * @param alertType Loại thông báo (ERROR, INFORMATION, WARNING, ...)
-     * @param title     Tiêu đề thông báo
-     * @param message   Nội dung thông báo
-     */
-    private void showAlert(AlertType alertType, String title, String message) {
-        Alert alert = new Alert(alertType);
-        alert.setTitle(title);
-        alert.setHeaderText(null);
-        alert.setContentText(message);
-        alert.showAndWait();
-    }
-
-    /**
-     * Kiểm tra định dạng email
+     * Kiểm tra định dạng email hợp lệ
      *
      * @param email Email cần kiểm tra
      * @return true nếu email hợp lệ, ngược lại false
      */
     private boolean isValidEmail(String email) {
-        // Sử dụng regex để kiểm tra định dạng email
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
         return email.matches(emailRegex);
     }
+
+    /**
+     * Kiểm tra trạng thái Caps Lock khi nhấn phím
+     *
+     * @param event Sự kiện phím
+     */
+    private void checkCapsLock(KeyEvent event) {
+        if (event.getCode().toString().equals("CAPS")) {
+            // Đảo trạng thái Caps Lock khi nhấn phím Caps Lock
+            isCapsLockOn = !isCapsLockOn;
+        }
+
+        // Hiển thị hoặc ẩn thông báo Caps Lock
+        capsLockWarning.setVisible(isCapsLockOn);
+    }
+
+    // Ẩn hiện mật khẩu với button
+    private void togglePasswordVisibility() {
+        isPasswordVisible = PasswordUtils.togglePasswordVisibility(isPasswordVisible, passwordField, visiblePasswordField, togglePasswordButton);
+    }    
 }

@@ -6,13 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import src.util.GlobalVariables;
 
 public class SignUp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         try {
             // Load FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/src/view/signup.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(GlobalVariables.BASE_FXML_PATH + GlobalVariables.APP_NAME_SIGNUP));
             Parent root = loader.load();
 
             // Tạo Scene từ root
@@ -20,13 +21,13 @@ public class SignUp extends Application {
 
             // Gắn icon ứng dụng
             primaryStage.getIcons()
-                    .add(new Image(getClass().getResource("/src/assets/img/student-management-icon.png").toExternalForm()));
+                    .add(new Image(getClass().getResource(GlobalVariables.BASE_IMAGE_PATH + "student-management-icon.png").toExternalForm()));
 
             // Gắn stylesheet
-            scene.getStylesheets().add(getClass().getResource("/src/assets/css/SignUp.css").toExternalForm());
+            scene.getStylesheets().add(getClass().getResource(GlobalVariables.BASE_CSS_PATH + "SignUp.css").toExternalForm());
 
             // Thiết lập tiêu đề và cảnh của Stage
-            primaryStage.setTitle("Sign Up - JavaFX Application");
+            primaryStage.setTitle("Đăng Ký");
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception e) {

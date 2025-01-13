@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -7,13 +8,14 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="420.0" prefWidth="800.0" stylesheets="@../assets/css/SignUp.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.controller.LoginController">
+<BorderPane prefHeight="416.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.controller.LoginController">
    <top>
       <VBox alignment="CENTER" prefHeight="63.0" prefWidth="816.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="918.0" styleClass="main-title" stylesheets="@../assets/css/SignUp.css" text="GIAO DIỆN ĐĂNG NHẬP" textAlignment="CENTER" />
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="918.0" styleClass="main-title" text="GIAO DIỆN ĐĂNG NHẬP" textAlignment="CENTER" />
          </children>
       </VBox>
    </top>
@@ -23,11 +25,11 @@
             <Label alignment="CENTER" prefHeight="35.0" prefWidth="334.0" style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;" text="NÀY, KHOAN ĐÃ..." textAlignment="CENTER" />
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/img/student-management-icon.png" />
+                  <Image url="@../assets/img/login.png" />
                </image>
             </ImageView>
             <Label alignment="CENTER" prefHeight="25.0" prefWidth="343.0" style="-fx-text-fill: white; -fx-font-size: 16px;" text="Nếu bạn chưa có tài khoản, hãy đăng ký" textAlignment="CENTER" />
-            <Button fx:id="signUpButton" maxWidth="Infinity" prefHeight="93.0" prefWidth="313.0" styleClass="SignInBtn" text="ĐĂNG KÝ" />
+            <Button fx:id="signUpButton" maxWidth="Infinity" prefHeight="46.0" prefWidth="343.0" styleClass="SignInBtn" text="ĐĂNG KÝ" />
          </children>
       </VBox>
    </right>
@@ -36,9 +38,18 @@
          <children>
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="ĐĂNG NHẬP TÀI KHOẢN" />
             <TextField fx:id="emailField" promptText="Email" style="-fx-padding: 10;" />
-            <PasswordField fx:id="passwordField" promptText="Mật khẩu" style="-fx-padding: 10;" />
+            <!-- StackPane chứa PasswordField và Button -->
+            <StackPane alignment="CENTER_RIGHT">
+               <PasswordField fx:id="passwordField" prefHeight="37.0" prefWidth="360.0" promptText="Mật khẩu" style="-fx-padding: 10;" />
+               <TextField fx:id="visiblePasswordField" managed="false" prefHeight="37.0" prefWidth="360.0" promptText="Mật khẩu" visible="false" />
+               <Button fx:id="togglePasswordButton" focusTraversable="false" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-cursor: hand;" text="👁" />
+            </StackPane>
+            <Label fx:id="capsLockWarning" style="-fx-text-fill: red; -fx-font-size: 12px;" text="Caps Lock đang bật!" visible="true" />
             <Button fx:id="loginButton" maxWidth="Infinity" prefHeight="13.0" prefWidth="423.0" styleClass="SignUpBtn" text="ĐĂNG NHẬP" />
          </children>
       </VBox>
    </center>
+   <stylesheets>
+      <URL value="@../assets/css/SignUp.css" />
+   </stylesheets>
 </BorderPane>

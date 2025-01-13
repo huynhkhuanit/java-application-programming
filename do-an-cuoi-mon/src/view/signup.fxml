@@ -7,41 +7,52 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="416.0" prefWidth="762.0" stylesheets="@../assets/css/SignUp.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.controller.SignUpController">
-    <left>
-        <VBox alignment="CENTER" prefHeight="353.0" prefWidth="356.0" spacing="20" style="-fx-background-color: #04aa6d; -fx-padding: 20;">
-            <Label alignment="CENTER" prefHeight="35.0" prefWidth="334.0" style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;" text="CHÀO MỪNG TRỞ LẠI" textAlignment="CENTER" />
+<BorderPane prefHeight="416.0" prefWidth="800.0" stylesheets="@../assets/css/SignUp.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.controller.SignUpController">
+   <left>
+      <VBox alignment="CENTER" prefHeight="353.0" prefWidth="356.0" spacing="20" style="-fx-background-color: #04aa6d; -fx-padding: 20;">
+         <Label alignment="CENTER" prefHeight="35.0" prefWidth="334.0" style="-fx-font-size: 24px; -fx-text-fill: white; -fx-font-weight: bold;" text="CHÀO MỪNG TRỞ LẠI" textAlignment="CENTER" />
          <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
             <image>
-               <Image url="@../assets/img/student-management-icon.png" />
+               <Image url="@../assets/img/signup.png" />
             </image>
          </ImageView>
-            <Label alignment="CENTER" prefHeight="25.0" prefWidth="343.0" style="-fx-text-fill: white; -fx-font-size: 16px;" text="Bạn đã có tài khoản, hãy đăng nhập..." textAlignment="CENTER" />
-            <Button fx:id="loginButton" maxWidth="Infinity" prefHeight="45.0" prefWidth="335.0" styleClass="SignInBtn" text="ĐĂNG NHẬP" />
-        </VBox>
-    </left>
+         <Label alignment="CENTER" prefHeight="25.0" prefWidth="343.0" style="-fx-text-fill: white; -fx-font-size: 16px;" text="Bạn đã có tài khoản, hãy đăng nhập..." textAlignment="CENTER" />
+         <Button fx:id="loginButton" maxWidth="Infinity" prefHeight="45.0" prefWidth="335.0" styleClass="SignInBtn" text="ĐĂNG NHẬP" />
+      </VBox>
+   </left>
 
-    <center>
-        <VBox alignment="CENTER" prefHeight="358.0" prefWidth="461.0" spacing="20" style="-fx-padding: 20;">
-            <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="ĐĂNG KÝ TÀI KHOẢN" />
-            <!-- Ô nhập Họ tên -->
-            <TextField fx:id="usernameField" promptText="Họ tên" style="-fx-padding: 10;" />
-            <!-- Ô nhập Email -->
-            <TextField fx:id="emailField" promptText="Email" style="-fx-padding: 10;" />
-            <!-- Ô nhập Mật khẩu -->
-            <PasswordField fx:id="passwordField" promptText="Mật khẩu" style="-fx-padding: 10;" />
-            <!-- Ô nhập Xác nhận mật khẩu -->
-            <PasswordField fx:id="confirmPasswordField" promptText="Xác nhận mật khẩu" style="-fx-padding: 10;" />
-            <!-- Nút ĐĂNG KÝ -->
-            <Button fx:id="signUpButton" maxWidth="Infinity" prefHeight="42.0" prefWidth="480.0" styleClass="SignUpBtn" text="ĐĂNG KÝ" />
-        </VBox>
-    </center>
+   <center>
+      <VBox alignment="CENTER" prefHeight="358.0" prefWidth="461.0" spacing="20" style="-fx-padding: 20;">
+         <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="ĐĂNG KÝ TÀI KHOẢN" />
+         <!-- Ô nhập Họ tên -->
+         <TextField fx:id="usernameField" promptText="Họ tên" style="-fx-padding: 10;" />
+         <!-- Ô nhập Email -->
+         <TextField fx:id="emailField" promptText="Email" style="-fx-padding: 10;" />
+         <!-- Ô nhập Mật khẩu -->
+         <StackPane alignment="CENTER_RIGHT">
+            <PasswordField fx:id="passwordField" prefHeight="37.0" prefWidth="360.0" promptText="Mật khẩu" style="-fx-padding: 10;" />
+            <TextField fx:id="visiblePasswordField" managed="false" prefHeight="37.0" prefWidth="360.0" promptText="Mật khẩu" style="-fx-padding: 10;" visible="false" />
+            <Button fx:id="togglePasswordButton" focusTraversable="false" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-cursor: hand;" text="👁" />
+         </StackPane>
+         <!-- Ô nhập Xác nhận mật khẩu -->
+         <StackPane alignment="CENTER_RIGHT">
+            <PasswordField fx:id="confirmPasswordField" prefHeight="37.0" prefWidth="360.0" promptText="Xác nhận mật khẩu" style="-fx-padding: 10;" />
+            <TextField fx:id="visibleConfirmPasswordField" managed="false" prefHeight="37.0" prefWidth="360.0" promptText="Xác nhận mật khẩu" style="-fx-padding: 10;" visible="false" />
+            <Button fx:id="toggleConfirmPasswordButton" focusTraversable="false" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-cursor: hand;" text="👁" />
+         </StackPane>
+         <!-- Caps Lock Warning -->
+         <Label fx:id="capsLockWarning" style="-fx-text-fill: red; -fx-font-size: 12px;" text="Caps Lock đang bật!" visible="true" />
+         <!-- Nút ĐĂNG KÝ -->
+         <Button fx:id="signUpButton" maxWidth="Infinity" prefHeight="42.0" prefWidth="480.0" styleClass="SignUpBtn" text="ĐĂNG KÝ" />
+      </VBox>
+   </center>
    <top>
       <VBox alignment="CENTER" prefHeight="63.0" prefWidth="816.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="918.0" styleClass="main-title" stylesheets="@../assets/css/SignUp.css" text="GIAO DIỆN ĐĂNG KÝ" textAlignment="CENTER" />
+            <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="63.0" prefWidth="918.0" styleClass="main-title" text="GIAO DIỆN ĐĂNG KÝ" textAlignment="CENTER" />
          </children>
       </VBox>
    </top>

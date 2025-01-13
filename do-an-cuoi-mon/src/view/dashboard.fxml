@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.controller.DashboardController">
+   <!-- HEADER -->
+   <top>
+      <HBox alignment="CENTER" spacing="20" style="-fx-padding: 10; -fx-background-color: #04aa6d;">
+         <children>
+            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../assets/img/student-management-icon.png" />
+               </image>
+            </ImageView>
+            <Label style="-fx-text-fill: white; -fx-font-size: 24px; -fx-font-weight: bold;" text="HỆ THỐNG QUẢN LÝ SINH VIÊN" />
+         </children>
+      </HBox>
+   </top>
+
+   <!-- LEFT MENU -->
+   <left>
+      <VBox prefHeight="530.0" prefWidth="156.0" spacing="15" style="-fx-padding: 10; -fx-background-color: #f9f9f9;">
+         <children>
+            <Button fx:id="btnOverview" prefWidth="180.0" styleClass="menu-button" text="Tổng quan" />
+            <Button fx:id="btnStudentList" prefWidth="180.0" styleClass="menu-button" text="Danh sách sinh viên" />
+            <Button fx:id="btnStatistics" prefWidth="180.0" styleClass="menu-button" text="Thống kê" />
+            <Button fx:id="btnLogout" prefWidth="180.0" styleClass="menu-button" text="Đăng xuất" />
+         </children>
+      </VBox>
+   </left>
+
+   <!-- CENTER CONTENT -->
+   <center>
+      <VBox spacing="20" style="-fx-padding: 20;">
+         <children>
+            <!-- Title -->
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="DANH SÁCH SINH VIÊN" />
+
+            <!-- TableView -->
+            <TableView fx:id="studentTable" prefHeight="395.0" prefWidth="349.0">
+               <columns>
+                  <TableColumn fx:id="colStudentId" prefWidth="100.0" text="Mã SV">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="studentId" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colFullName" prefWidth="200.0" text="Họ và Tên">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="fullName" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colBirthDate" prefWidth="150.0" text="Ngày Sinh">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="birthDate" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colGender" prefWidth="100.0" text="Giới Tính">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="gender" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn fx:id="colClass" prefWidth="150.0" text="Lớp">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="className" />
+                     </cellValueFactory>
+                  </TableColumn>
+               </columns>
+            </TableView>
+
+            <!-- Action Buttons -->
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+               <Button fx:id="btnAddStudent" styleClass="action-button" text="Thêm sinh viên" />
+               <Button fx:id="btnEditStudent" styleClass="action-button" text="Sửa thông tin" />
+               <Button fx:id="btnDeleteStudent" styleClass="action-button" text="Xóa sinh viên" />
+            </HBox>
+         </children>
+      </VBox>
+   </center>
+</BorderPane>

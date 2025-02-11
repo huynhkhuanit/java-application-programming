@@ -1,0 +1,123 @@
+/* CSS cho phần giao diện [MAIN] */
+
+.main__function__text {
+    /* -fx-text-fill: linear-gradient(to right, #2196F3, #42A5F5);  */
+    -fx-text-fill: #fff; 
+    -fx-font-size: 28px; 
+    -fx-font-weight: bold; 
+    -fx-graphic-text-gap: 10; 
+    -fx-alignment: center; 
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0, 1, 1); 
+    -fx-padding: 10px; 
+    -fx-background-color: transparent; 
+    /* -fx-border-color: #E0E0E0;  */
+    /* -fx-border-width: 1px;  */
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+
+/* Button cơ bản */
+/* Button cơ bản */
+.main__button {
+    -fx-background-color: transparent; /* Nền trong suốt */
+    -fx-text-fill: white; /* Màu chữ */
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px; /* Bo góc */
+    -fx-graphic-text-gap: 10px; /* Khoảng cách icon và chữ */
+    -fx-padding: 10px 20px;
+    -fx-cursor: hand; /* Con trỏ chuột */
+    -fx-border-color: transparent; /* Không viền */
+    -fx-transition: all 0.3s ease-in-out; /* Hiệu ứng mượt */
+}
+
+/* Hiệu ứng Hover */
+.main__button:hover {
+    -fx-background-color: linear-gradient(to right, #2196F3, #42A5F5); /* Gradient xanh */
+    -fx-text-fill: white; /* Màu chữ trắng */
+    -fx-scale-x: 1.05; /* Tăng kích thước */
+    -fx-scale-y: 1.05;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.2, 0, 0); /* Đổ bóng mượt */
+}
+
+/* Trạng thái Focus (khi chọn) */
+.main__button:focused {
+    -fx-background-color: linear-gradient(to right, #1E88E5, #1976D2); /* Gradient đậm hơn */
+    -fx-text-fill: #ffffff; /* Màu chữ */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 255, 0.5), 8, 0.2, 0, 0);
+}
+
+/* Icon hover */
+.main__button:hover > .graphic {
+    -fx-opacity: 0.8; /* Làm mờ nhẹ icon */
+    -fx-effect: dropshadow(gaussian, rgba(255, 255, 255, 0.75), 5, 0.2, 0, 0); /* Bóng sáng */
+}
+
+/* HBox chứa hai nút */
+.hbox {
+    -fx-spacing: 0; /* Loại bỏ khoảng cách giữa các nút */
+    -fx-alignment: center; /* Canh giữa */
+    -fx-background-color: transparent;
+}
+
+/* Nút Sign Up (nút bên trái) */
+.signup__button {
+    -fx-background-color: #04aa6d; /* Màu xanh */
+    -fx-text-fill: white; /* Màu chữ */
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 50px 0 0 50px; /* Bo góc trái */
+    -fx-border-width: 0;
+    -fx-border-width: 0;
+    -fx-padding: 10 20; /* Khoảng cách chữ */
+    -fx-cursor: hand;
+}
+
+/* Nút Log in (nút bên phải) */
+.login__button {
+    -fx-background-color: #D9EEE1; /* Màu nền nhạt */
+    -fx-text-fill: #000; /* Màu chữ xanh */
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 0 50px 50px 0; /* Bo góc phải */
+    -fx-border-width: 0;
+    -fx-padding: 10 20; /* Khoảng cách chữ */
+    -fx-cursor: hand;
+}
+
+/* Hiệu ứng hover cho nút Sign Up */
+.signup__button:hover {
+    -fx-background-color: #059862; /* Màu xanh đậm khi hover */
+    -fx-text-fill: white; /* Màu chữ */
+}
+
+/* Hiệu ứng hover cho nút Log in */
+.login__button:hover {
+    -fx-background-color: #059862; /* Màu nền khi hover */
+    -fx-text-fill: #fff; /* Màu chữ */
+}
+
+/* main-styles.css */
+
+/* Nút đăng xuất */
+.logout__button {
+    -fx-background-color: #ff4d4d;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px 10px;
+    -fx-font-size: 14px;
+    -fx-cursor: hand;
+}
+
+.logout__button:hover {
+    -fx-opacity: .9;
+}
+
+/* Label chào mừng */
+#welcomeLabel {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #fff;
+    -fx-padding: 5px;
+}

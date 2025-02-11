@@ -40,7 +40,7 @@
 
    <!-- CENTER CONTENT -->
    <center>
-      <VBox spacing="20" style="-fx-padding: 20;">
+      <VBox spacing="20" style="-fx-padding: 20; -fx-background-color: #fff;">
          <children>
             <!-- Title -->
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="DANH SÁCH SINH VIÊN" />

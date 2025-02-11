@@ -2,6 +2,10 @@ package src.util;
 
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import javafx.scene.control.Button;
 
 public class PasswordUtils {
@@ -40,5 +44,20 @@ public class PasswordUtils {
             toggleButton.setText("🔒");
         }
         return !isPasswordVisible;
+    }
+
+    public static String hashPassword(String password) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] hashedBytes = md.digest(password.getBytes());
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hashedBytes) {
+                hexString.append(String.format("%02x", b));
+            }
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 }

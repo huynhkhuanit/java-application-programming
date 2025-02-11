@@ -20,12 +20,12 @@
             </image>
          </ImageView>
          <Label alignment="CENTER" prefHeight="25.0" prefWidth="343.0" style="-fx-text-fill: white; -fx-font-size: 16px;" text="Bạn đã có tài khoản, hãy đăng nhập..." textAlignment="CENTER" />
-         <Button fx:id="loginButton" maxWidth="Infinity" prefHeight="45.0" prefWidth="335.0" styleClass="SignInBtn" text="ĐĂNG NHẬP" />
+         <Button fx:id="loginButton" maxWidth="Infinity" prefHeight="46.0" prefWidth="335.0" styleClass="SignInBtn" text="ĐĂNG NHẬP" />
       </VBox>
    </left>
 
    <center>
-      <VBox alignment="CENTER" prefHeight="358.0" prefWidth="461.0" spacing="20" style="-fx-padding: 20;">
+      <VBox alignment="CENTER" prefHeight="358.0" prefWidth="461.0" spacing="10.0" style="-fx-padding: 20;">
          <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="ĐĂNG KÝ TÀI KHOẢN" />
          <!-- Ô nhập Họ tên -->
          <TextField fx:id="usernameField" promptText="Họ tên" style="-fx-padding: 10;" />
@@ -46,7 +46,7 @@
          <!-- Caps Lock Warning -->
          <Label fx:id="capsLockWarning" style="-fx-text-fill: red; -fx-font-size: 12px;" text="Caps Lock đang bật!" visible="true" />
          <!-- Nút ĐĂNG KÝ -->
-         <Button fx:id="signUpButton" maxWidth="Infinity" prefHeight="42.0" prefWidth="480.0" styleClass="SignUpBtn" text="ĐĂNG KÝ" />
+         <Button fx:id="signUpButton" maxWidth="Infinity" prefHeight="46.0" prefWidth="404.0" styleClass="SignUpBtn" text="ĐĂNG KÝ" />
       </VBox>
    </center>
    <top>

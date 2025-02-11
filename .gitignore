@@ -14,3 +14,5 @@ bin/
 # Bỏ qua file hệ thống
 .DS_Store
 Thumbs.db
+/Thuc_Hanh/bai-tap-bao-cao/bai01/nbproject/private/
+/Thuc_Hanh/bai-tap-bao-cao/bai01/build/

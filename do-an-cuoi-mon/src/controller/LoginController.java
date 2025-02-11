@@ -10,9 +10,11 @@ import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 import java.awt.Toolkit;
+import java.sql.Connection;
 
 // Common class
 import src.util.*;
+import src.model.*;
 
 public class LoginController {
 
@@ -69,50 +71,48 @@ public class LoginController {
         togglePasswordButton.setOnAction(event -> togglePasswordVisibility());
     }
 
+    
     /**
      * Xử lý sự kiện khi nhấn nút Login
      */
     private void handleLogin() {
         String email = emailField.getText();
         String password = passwordField.getText();
-
-        if (email.isEmpty() || password.isEmpty()) {
-            NotificationUtils.showWarning("Lỗi đăng nhập", "Vui lòng nhập đầy đủ email và mật khẩu!");
-            return;
-        }
-
-        if (!isValidEmail(email)) {
-            NotificationUtils.showWarning("Lỗi đăng nhập", "Định dạng email không hợp lệ!");
-            return;
-        }
-
-        if (email.equals(GlobalVariables.DEFAULT_EMAIL) && password.equals(GlobalVariables.DEFAULT_PASSWORD)) {
+    
+        // Kiểm tra thông tin đăng nhập từ cơ sở dữ liệu
+        User user = UserService.authenticate(email, password);
+        if (user != null) {
             NotificationUtils.showInfo("Đăng nhập thành công", "Chào mừng bạn quay lại!");
+    
+            // Lấy Stage hiện tại
+            Stage currentStage = (Stage) loginButton.getScene().getWindow();
+    
+            // Lấy MainController từ Stage chính (đã được truyền vào trong showLoginModal)
+            MainController mainController = (MainController) currentStage.getUserData();
+            if (mainController != null) {
+                mainController.handleLoginSuccess(user.getUsername());
+            } else {
+                System.out.println("MainController là null, không thể xử lý đăng nhập.");
+            }
+    
+            // Đóng cửa sổ đăng nhập
+            currentStage.close();
         } else {
-            NotificationUtils.showError("Đăng nhập không thành không", "Email hoặc mật khẩu không đúng!");
+            NotificationUtils.showError("Đăng nhập thất bại", "Email hoặc mật khẩu không chính xác!");
         }
     }
+    
 
     /**
      * Xử lý sự kiện khi nhấn nút Sign Up
      */
     private void handleSignUp() {
         Stage currentStage = (Stage) signUpButton.getScene().getWindow();
-        loadwindowsUtils.loadWindow(GlobalVariables.BASE_FXML_PATH + GlobalVariables.APP_NAME_SIGNUP, GlobalVariables.SIGNUP_NAME,
+        loadwindowsUtils.loadWindow(GlobalVariables.BASE_FXML_PATH + GlobalVariables.APP_NAME_SIGNUP,
+                GlobalVariables.SIGNUP_NAME,
                 currentStage);
     }
-
-    /**
-     * Kiểm tra định dạng email hợp lệ
-     *
-     * @param email Email cần kiểm tra
-     * @return true nếu email hợp lệ, ngược lại false
-     */
-    private boolean isValidEmail(String email) {
-        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$";
-        return email.matches(emailRegex);
-    }
-
+    
     /**
      * Kiểm tra trạng thái Caps Lock khi nhấn phím
      *
@@ -130,6 +130,7 @@ public class LoginController {
 
     // Ẩn hiện mật khẩu với button
     private void togglePasswordVisibility() {
-        isPasswordVisible = PasswordUtils.togglePasswordVisibility(isPasswordVisible, passwordField, visiblePasswordField, togglePasswordButton);
-    }    
+        isPasswordVisible = PasswordUtils.togglePasswordVisibility(isPasswordVisible, passwordField,
+                visiblePasswordField, togglePasswordButton);
+    }
 }

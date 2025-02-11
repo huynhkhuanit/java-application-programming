@@ -12,46 +12,86 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../assets/css/main.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.controller.MainController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@../assets/css/main-styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.controller.MainController">
    <left>
-      <VBox prefWidth="170.0" spacing="10" style="-fx-padding: 10;" BorderPane.alignment="CENTER">
-         <Label prefHeight="17.0" prefWidth="191.0" styleClass="main__function__text" text="MENU">
-            <graphic>
-               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+      <VBox alignment="TOP_CENTER" prefHeight="693.0" prefWidth="213.0" spacing="10" style="-fx-padding: 10; -fx-border-width: 0 1px 0 0; -fx-border-color: #ddd; -fx-background-color: linear-gradient(to right, #04aa6d, #028e59);" BorderPane.alignment="CENTER">
+         <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+            <children>
+               <ImageView fx:id="loginAvatar" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../assets/img/dashboard.png" />
+                     <Image url="@../assets/img/warning.png" />
+                  </image>
+               </ImageView>
+
+               <!-- Thông báo chào mừng (ẩn mặc định) -->
+               <Label fx:id="welcomeLabel" style="-fx-font-size: 14px; -fx-font-weight: bold;" text="VUI LÒNG ĐĂNG NHẬP" />
+
+               <!-- Nút đăng xuất (ẩn mặc định) -->
+               <Button fx:id="logoutButton" contentDisplay="BOTTOM" prefHeight="27.0" prefWidth="195.0" styleClass="logout__button" text="Đăng xuất" visible="false" />
+            </children>
+         </VBox>
+         <!-- CHỨC NĂNG 1 : BẢNG ĐIỀU KHIỂN -->
+         <Button fx:id="dashboardHandle" alignment="CENTER" contentDisplay="TOP" onAction="#showDashboard" prefHeight="40.0" prefWidth="282.0" styleClass="main__button" text="BẢNG ĐIỀU KHIỂN">
+            <graphic>
+               <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../assets/img/features-dashboard.png" />
                   </image>
                </ImageView>
             </graphic>
-         </Label>
-         <!-- Chức năng 1 -->
-         <Button fx:id="dashboardHandle" onAction="#showDashboard" prefWidth="150.0" styleClass="main__button" text="Dashboard">
-            <graphic>
-               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                  <image>
-                     <Image url="@../assets/img/dashboard.png" />
-                  </image>
-               </ImageView>
-            </graphic>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
          </Button>
 
-         <!-- Chức năng 2 -->
-         <Button fx:id="UIHandle" onAction="#showUIElements" prefWidth="150.0" styleClass="main__button" text="UI Elements">
+         <!-- CHỨC NĂNG 2 : Quản lý sinh viên -->
+         <Button fx:id="studentManagementHandle" alignment="CENTER" contentDisplay="TOP" onAction="#showStudentManagement" prefHeight="40.0" prefWidth="253.0" styleClass="main__button" text="QUẢN LÝ SINH VIÊN">
             <graphic>
-               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../assets/img/dashboard.png" />
+                     <Image url="@../assets/img/features-student-management.png" />
                   </image>
                </ImageView>
             </graphic>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
          </Button>
 
-         <!-- Chức năng 3 -->
-         <Button fx:id="function3Button" prefWidth="150.0" styleClass="main__button" text="Forms Stuff">
+         <!-- CHỨC NĂNG 3 : QUẢN LÝ KHOÁ HỌC -->
+         <Button fx:id="courseManagementHandle" alignment="CENTER" contentDisplay="TOP" onAction="#showCourseManagement" prefHeight="40.0" prefWidth="253.0" styleClass="main__button" text="QUẢN LÝ KHOÁ HỌC">
             <graphic>
-               <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                     <Image url="@../assets/img/dashboard.png" />
+                     <Image url="@../assets/img/features-courses-management.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+
+         <!-- CHỨC NĂNG 4 : QUẢN LÝ GIẢNG VIÊN -->
+         <Button fx:id="courseManagementHandle" alignment="CENTER" contentDisplay="TOP" onAction="#showLecturerManagement" prefHeight="40.0" prefWidth="253.0" styleClass="main__button" text="QUẢN LÝ GIẢNG VIÊN">
+            <graphic>
+               <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../assets/img/features-teacher-management.png" />
+                  </image>
+               </ImageView>
+            </graphic>
+            <cursor>
+               <Cursor fx:constant="HAND" />
+            </cursor>
+         </Button>
+
+         <!-- CHỨC NĂNG 5 : THỐNG KÊ -->
+         <Button fx:id="statisticsHandle" alignment="CENTER" contentDisplay="TOP" onAction="#showStatistics" prefHeight="40.0" prefWidth="253.0" styleClass="main__button" text="THỐNG KÊ">
+            <graphic>
+               <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                     <Image url="@../assets/img/features-statistics.png" />
                   </image>
                </ImageView>
             </graphic>
@@ -67,33 +107,26 @@
                   <Image url="@../assets/img/student-management-icon.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" prefHeight="74.0" prefWidth="665.0" style="-fx-font-weight: bold;" text="PHẦN MỀM QUẢN LÝ SINH VIÊN" textAlignment="CENTER" wrapText="true">
+            <Label alignment="CENTER" prefHeight="74.0" prefWidth="618.0" style="-fx-font-weight: bold;" text="PHẦN MỀM QUẢN LÝ SINH VIÊN" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Button fx:id="signUpButton" mnemonicParsing="false" style="-fx-background-color: transparent;" text="Đăng ký">
-               <padding>
-                  <Insets bottom="9.0" left="20.0" right="20.0" top="9.0" />
-               </padding>
-               <font>
-                  <Font size="14.0" />
-               </font>
+
+            <!-- Nút giao diện sáng tối -->
+            <Button fx:id="themeToggleButton" onAction="#toggleTheme" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #04aa6d; -fx-text-fill: white; -fx-background-radius: 15;" text="🌞">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="loginButton" mnemonicParsing="false" style="-fx-background-color: #04aa6d; -fx-text-fill: #fff; -fx-background-radius: 999px;" text="Đăng nhập">
-               <padding>
-                  <Insets bottom="9.0" left="20.0" right="20.0" top="9.0" />
-               </padding>
-               <font>
-                  <Font size="14.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
+
+            <HBox alignment="CENTER_RIGHT" prefHeight="74.0" prefWidth="72.0" spacing="10.0" styleClass="hbox" HBox.hgrow="ALWAYS">
+               <children>
+                  <!-- Nút Đăng ký và Đăng nhập -->
+                  <Button fx:id="signUpButton" mnemonicParsing="false" styleClass="signup__button" text="Đăng ký" visible="true" HBox.hgrow="NEVER" />
+                  <Button fx:id="loginButton" mnemonicParsing="false" styleClass="login__button" text="Đăng nhập" visible="true" HBox.hgrow="NEVER" />
+               </children>
+            </HBox>
          </children>
          <padding>
             <Insets left="20.0" right="20.0" />
@@ -107,9 +140,6 @@
             <VBox fx:id="uiElementsView" prefHeight="200.0" prefWidth="611.0" />
             <VBox fx:id="formsStuffView" prefHeight="698.0" prefWidth="854.0" />
          </children>
-         <padding>
-            <Insets left="10.0" top="10.0" />
-         </padding>
       </StackPane>
    </center>
 </BorderPane>

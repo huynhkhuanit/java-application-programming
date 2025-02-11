@@ -10,8 +10,8 @@
 .SignInBtn {
     -fx-background-color: transparent;
     -fx-border-radius: 7px;
-    -fx-border-color: #fff;
     -fx-border-width: 2px;
+    -fx-border-color: #fff;
     -fx-text-fill: #fff;
     -fx-font-weight: bold;
     -fx-font-size: 16px;
@@ -20,8 +20,7 @@
 
 .SignUpBtn {
     -fx-background-color: #04aa6d;
-    -fx-border-radius: 7px;
-    -fx-border-width: 2px;
+    -fx-background-radius: 7px;
     -fx-text-fill: #fff;
     -fx-font-weight: bold;
     -fx-font-size: 16px;

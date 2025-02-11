@@ -10,6 +10,7 @@ import javafx.stage.Stage;
 import src.util.*;
 
 import java.awt.Toolkit;
+import java.sql.Connection;
 
 public class SignUpController {
 
@@ -87,23 +88,42 @@ public class SignUpController {
         String password = passwordField.getText();
         String confirmPassword = confirmPasswordField.getText();
 
+        // Kiểm tra xem tất cả các trường có rỗng không
         if (username.isEmpty() || email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             NotificationUtils.showWarning("Lỗi đăng ký", "Vui lòng nhập đầy đủ thông tin!");
             return;
         }
 
-        // Gọi lớp ValidationUtils chứa phương thức isValidEmal để kiểm tra định dạng email
-        if (!ValidationUtils.isValidEmail(email)) {
-            NotificationUtils.showError("Lỗi", "Định dạng email không hợp lệ!");
-            return;
-        }
-
+        // Kiểm tra mật khẩu và xác nhận mật khẩu có khớp không
         if (!password.equals(confirmPassword)) {
-            NotificationUtils.showError("Lỗi", "Mật khẩu không khớp!");
+            NotificationUtils.showError("Lỗi đăng ký", "Mật khẩu và xác nhận mật khẩu không khớp!");
             return;
         }
 
-        NotificationUtils.showInfo("Đăng ký thành công", "Chào mừng bạn, " + username + "!");
+        // Kiểm tra định dạng email
+        if (!ValidationUtils.isValidEmail(email)) {
+            NotificationUtils.showError("Lỗi đăng ký", "Email không hợp lệ!");
+            return;
+        }
+
+        // Kết nối cơ sở dữ liệu để lưu tài khoản mới
+        try (Connection connection = DatabaseConnection.getConnection()) {
+            String query = "INSERT INTO users (username, email, password, role) VALUES (?, ?, SHA2(?, 256), 'student')";
+            var preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, username);
+            preparedStatement.setString(2, email);
+            preparedStatement.setString(3, password);
+
+            int rowsInserted = preparedStatement.executeUpdate();
+            if (rowsInserted > 0) {
+                NotificationUtils.showInfo("Đăng ký thành công", "Tài khoản đã được tạo cho " + username);
+            } else {
+                NotificationUtils.showError("Lỗi đăng ký", "Không thể tạo tài khoản. Vui lòng thử lại sau!");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            NotificationUtils.showError("Lỗi", "Đã xảy ra lỗi khi kết nối cơ sở dữ liệu!");
+        }
     }
 
     /**
@@ -111,7 +131,9 @@ public class SignUpController {
      */
     private void handleLogin() {
         Stage currentStage = (Stage) loginButton.getScene().getWindow();
-        loadwindowsUtils.loadWindow(GlobalVariables.BASE_FXML_PATH + GlobalVariables.APP_NAME_LOGIN, GlobalVariables.LOGIN_NAME, currentStage);
+        MainController mainController = (MainController) currentStage.getUserData();
+        loadwindowsUtils.loadWindow(GlobalVariables.BASE_FXML_PATH + GlobalVariables.APP_NAME_LOGIN,
+                GlobalVariables.LOGIN_NAME, currentStage);
     }
 
     /**
@@ -140,21 +162,25 @@ public class SignUpController {
      */
     private void toggleConfirmPasswordVisibility() {
         isConfirmPasswordVisible = !isConfirmPasswordVisible;
-        togglePasswordFieldVisibility(confirmPasswordField, visibleConfirmPasswordField, toggleConfirmPasswordButton, isConfirmPasswordVisible);
+        togglePasswordFieldVisibility(confirmPasswordField, visibleConfirmPasswordField, toggleConfirmPasswordButton,
+                isConfirmPasswordVisible);
     }
 
     /**
      * Đồng bộ hóa giữa trường PasswordField và TextField
      */
     private void setupPasswordFieldBinding(PasswordField passwordField, TextField visiblePasswordField) {
-        passwordField.textProperty().addListener((observable, oldValue, newValue) -> visiblePasswordField.setText(newValue));
-        visiblePasswordField.textProperty().addListener((observable, oldValue, newValue) -> passwordField.setText(newValue));
+        passwordField.textProperty()
+                .addListener((observable, oldValue, newValue) -> visiblePasswordField.setText(newValue));
+        visiblePasswordField.textProperty()
+                .addListener((observable, oldValue, newValue) -> passwordField.setText(newValue));
     }
 
     /**
      * Chuyển đổi giữa PasswordField và TextField
      */
-    private void togglePasswordFieldVisibility(PasswordField passwordField, TextField visiblePasswordField, Button toggleButton, boolean isVisible) {
+    private void togglePasswordFieldVisibility(PasswordField passwordField, TextField visiblePasswordField,
+            Button toggleButton, boolean isVisible) {
         if (isVisible) {
             visiblePasswordField.setVisible(true);
             visiblePasswordField.setManaged(true);

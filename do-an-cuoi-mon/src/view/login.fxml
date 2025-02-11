@@ -34,7 +34,7 @@
       </VBox>
    </right>
    <center>
-      <VBox alignment="CENTER" prefHeight="358.0" prefWidth="461.0" spacing="20" style="-fx-padding: 20;" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="358.0" prefWidth="461.0" spacing="20.0" style="-fx-padding: 20;" BorderPane.alignment="CENTER">
          <children>
             <Label style="-fx-font-size: 20px; -fx-font-weight: bold;" text="ĐĂNG NHẬP TÀI KHOẢN" />
             <TextField fx:id="emailField" promptText="Email" style="-fx-padding: 10;" />
@@ -45,7 +45,7 @@
                <Button fx:id="togglePasswordButton" focusTraversable="false" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-cursor: hand;" text="👁" />
             </StackPane>
             <Label fx:id="capsLockWarning" style="-fx-text-fill: red; -fx-font-size: 12px;" text="Caps Lock đang bật!" visible="true" />
-            <Button fx:id="loginButton" maxWidth="Infinity" prefHeight="13.0" prefWidth="423.0" styleClass="SignUpBtn" text="ĐĂNG NHẬP" />
+            <Button fx:id="loginButton" maxWidth="Infinity" prefHeight="46.0" prefWidth="423.0" styleClass="SignUpBtn" text="ĐĂNG NHẬP" />
          </children>
       </VBox>
    </center>
